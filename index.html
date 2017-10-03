@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="Theme2">
+<head>
+    <title>Web Controls</title>
+    <script src="JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="JS/LIB/materialize.js"></script>
+    <link href="CSS/1.normalize.css" rel="stylesheet" />
+    <link href="CSS/2.foundation.css" rel="stylesheet" />
+    <link href="CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="CSS/animate.css" rel="stylesheet" />
+    <link href="CSS/main.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        .menu ol {
+            display: inline-block;
+            height: calc(100% - 80px);
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0px;
+        }
+
+            .menu ol li {
+                display: list-item;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                line-height: 40px;
+                text-indent: 15px;
+            }
+            .menu ol li.active {
+                background: #fff;
+            }
+
+                .menu ol li:hover {
+                    background: #fff;
+                }
+
+                .menu ol li a {
+                    color: #26a69a;
+                    font-size: 17px;
+                    font-weight: 900;
+                }
+    </style>
+    <div class="medium-3 columns fullHeight padding0">
+        <div class="menu fullHeight">
+            <h5 class="medium-12 columns">
+                <input id="search" type="search" placeholder="Search" class="search"/></h5>
+            <ol>
+                <li class="waves-effect waves-teal active"><a href="#Carousel" title="Carousel - one way databinding - Asset Matrix">Carousel - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#Accordian" title="Accordion - one way databinding - Asset Matrix">Accordion - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#SearchPanel" title="Search Panel - one way databinding - Asset Matrix">Search Panel - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#InfoCard" title="Info Cards - one way databinding - Asset Matrix">Info Cards - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#Map" title="Map - one way databinding - Asset Matrix">Map - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#Charts" title="Charts - one way databinding - Asset Matrix">Charts - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#BubbleChart" title="Bubble Charts - one way databinding - Asset Matrix">Bubble Charts - one way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#TreeView" title="Tree View - two way databinding - Asset Matrix">Tree View - two way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#ShuttleList" title="Shuttle List - two way databinding - Asset Matrix">Shuttle List - two way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#EditList" title="Accordion - one way databinding - Asset Matrix">Edit List - two way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#Tabs" title="Tab Control - no databinding - Asset Matrix">Tab Control - no databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#CheckBoxList" title="Check Box List - two way databinding - Asset Matrix">Check Box List - two way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#DataGrid" title="Data Grid - two way databinding - Asset Matrixx">Data Grid - two way databinding - Asset Matrix</a></li>
+                <li class="waves-effect waves-teal"><a href="#MaxMin" title="Zoom-In Zoom-Out Layout - no databinding - Asset Matrix">Zoom-In Zoom-Out Layout - no databinding - Asset Matrix</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="medium-9 columns fullHeight padding0">
+        <iframe class="fullWidth fullHeight" style="border: 0px;" src="HTML/Carousel.html" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            setTimeout(function(){$('img[alt="www.000webhost.com"]').parent().parent().empty()},100);
+            
+            //redirect page to correct link
+            _path = window.location.href;
+            _path = _path.split("#");
+            if (typeof _path[1] != 'undefined') {
+                _active = _path[1];
+                _path = _path[1];
+                _path = "HTML/" + _path + ".html";
+                $('iframe').attr('src', _path);
+                $('.menu ol > li').removeClass('active');
+                $("[href=#" + _active + "]").parent().addClass('active');
+            }
+            
+            //Menu Events
+            $('.menu ol > li').on('click', function () {
+                MenuAction(this)
+            });
+
+            //Funtion To load Menu
+
+            function MenuAction(elm) {
+                _linkPath = $(elm).find('a').attr('href');
+                _linkPath = _linkPath.replace("#", '');
+                _linkPath = "HTML/" + _linkPath + ".html";
+                $('iframe').attr('src', _linkPath);
+                $('.menu ol > li').removeClass('active');
+                $(elm).addClass('active');
+            }
+
+            //Search Events
+
+            $("#search").keyup(function () {
+                _searchText = $(this).val();
+                $(".menu ol > li").each(function () {
+                    if ($(this).text().search(_searchText) > -1) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
