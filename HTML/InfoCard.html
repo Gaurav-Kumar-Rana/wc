@@ -1,0 +1,50 @@
+<html class="">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/materialize.min.js"></script>
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/InfoCard.css" rel="stylesheet" />
+    <script src="../JS/InfoCard.js"></script>
+
+
+</head>
+
+<body style="padding: 15px;">
+
+
+    <h4>Cards Control</h4>
+
+    <div class="medium-12 columns" id="cards"></div>
+
+    <p>&nbsp;</p>
+
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var data = [{ "listText": "Un-enrolled Asset", "listHead": "Slot Data", "listCount": [{ "Number": 758, "flag": "error" }], "listBody": [{ "listCount": 12341, "listBodyTxt": "Online", "flag": "sucess" }, { "listCount": 2156, "listBodyTxt": "Offline", "flag": "normal" }] }, { "listText": "Slots", "listHead": "Progressive Data", "listCount": [{ "Number": 14497, "flag": "normal" }], "listBody": [{ "listCount": 3603, "listBodyTxt": "Connected", "flag": "sucess" }, { "listCount": 10894, "listBodyTxt": "Not Connected", "flag": "error" }] }];
+
+            var newData = [{ "listText": "New Card", "listHead": "New Data", "listCount": [{ "Number": 111, "flag": "sucess" }], "listBody": [{ "listCount": 2222, "listBodyTxt": "Online", "flag": "normal" }, { "listCount": 3333, "listBodyTxt": "Offline", "flag": "normal" }] }, { "listText": "Un-enrolled Asset", "listHead": "Slot Data", "listCount": [{ "Number": 758, "flag": "error" }], "listBody": [{ "listCount": 12341, "listBodyTxt": "Online", "flag": "sucess" }, { "listCount": 2156, "listBodyTxt": "Offline", "flag": "normal" }] }, { "listText": "Slots", "listHead": "Progressive Data", "listCount": [{ "Number": 14497, "flag": "normal" }], "listBody": [{ "listCount": 3603, "listBodyTxt": "Connected", "flag": "sucess" }, { "listCount": 10894, "listBodyTxt": "Not Connected", "flag": "error" }] }];
+
+            var data1 = [{ "listText": "Un-enrolled Asset", "listHead": "Slot Data", "listCount": [{ "Number": 1111, "flag": "error" }], "listBody": [{ "listCount": 2222, "listBodyTxt": "Online", "flag": "sucess" }, { "listCount": 3333, "listBodyTxt": "Offline", "flag": "normal" }] }, { "listText": "Slots", "listHead": "Progressive Data", "listCount": [{ "Number": 14497, "flag": "normal" }], "listBody": [{ "listCount": 3603, "listBodyTxt": "Connected", "flag": "sucess" }, { "listCount": 10894, "listBodyTxt": "Not Connected", "flag": "error" }] }];
+
+            $("#cards").InfoCard(data);
+
+            $('#AddNew').click(function () { $('#cards').InfoCard(newData); });
+
+            $('#Reload').click(function () { $('#cards').InfoCard(data1); });
+        });
+    </script>
+
+</body>
+</html>

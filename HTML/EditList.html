@@ -1,0 +1,73 @@
+<html class="Theme2">
+<head>
+
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/jquery-ui-1.9.1.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/EditList.css" rel="stylesheet" />
+    <script src="../JS/EditList.js"></script>
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+        .EditList {
+            height:500px;
+            width:100%
+        }
+    </style>
+
+    <h4>Shuttle List Control</h4>
+    <div class="medium-12 columns EditList">
+        <div id="EditList"></div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+        <div class="btnElement" id="btnDisable">
+            <button class="btn waves-effect waves-light" id="NonEditable">Non Editable</button>
+        </div>
+
+        <div class="btnElement" id="btnUnDisable">
+            <button class="btn waves-effect waves-light" id="NonEditableNonSortable">Non Editable Un Sortable</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var _data = { "HiddenId": "HiddenAssetSequence", "DataString": ["Asset Number*", "Asset Location*", "Network Type", "Regulatory ID*", "Type Description Relation", "Denomination", "GMU Denom", "Fill Denom", "Progressive", "Progression Rate", "Area Zone Bank", "EGM ID", "Line Address", "Configuration Status", "Max Handle Pull Per Min", "Maximum Coin In", "Tournament Play", "Asset Type", "Position", "Disposition", "Location X", "Location Y", "Location Z", "Location R", "Purchased Amount", "Sold Amount", "Carousel No.", "Camera 1", "Camera 2", "Valid Fill Number", "Reel Strip", "Stool", "Pager Zone", "Val Mfg", "Description Number", "Game EPROM ID", "Machine Size", "Bill Serial No", "Life Cycle", "Video Game", "Credit Game", "Game Type", "Aux Fill Door No", "GMU Doc ID", "Tokenized", "ECash Enabled", "Ticket Printer", "Coin Acceptor", "Coin Hopper", "E Printer", "Game Protocol", "Playable Tickets", "Game Program ID", "X-Series", "Game Capping", "Max Award", "Venue Progressive", "Start Up", "User Custom 7", "User Custom 8", "User Custom 9", "Hexa Asset Number", "Roulette", "Roulette Id", "Smart Card", "Cashless/MagStrip", "Standard Error", "Game Supports Auto Pay", "ROM Sig Enabled", "Software Name", "EPROM ID", "CRC Request Date", "CRC Request Time", "CRC Count", "CRC Error", "GMU CRC Auth", "CRC Tkt Ecash Disabled", "Communication Protocol", "Bill Validator Capacity", "ROM Sig Error", "Multi Currency", "Asset Value", "Life Span", "Voucher Validation Type", "Purchase Date", "Enrollment Status", "Meter Max Data Type", "Hopper Tare Weight", "PROTOCOL TYPE", "Serial Number"], "isEdtitable": true, "sortable": false };
+            var _data1 = { "HiddenId": "HiddenAssetSequence", "DataString": ["Asset Number*", "Asset Location*", "New Data", "Network Type", "Regulatory ID*", "Type Description Relation", "Denomination", "GMU Denom", "Fill Denom", "Progressive", "Progression Rate", "Area Zone Bank", "EGM ID", "Line Address", "Configuration Status", "Max Handle Pull Per Min", "Maximum Coin In", "Tournament Play", "Asset Type", "Position", "Disposition", "Location X", "Location Y", "Location Z", "Location R", "Purchased Amount", "Sold Amount", "Carousel No.", "Camera 1", "Camera 2", "Valid Fill Number", "Reel Strip", "Stool", "Pager Zone", "Val Mfg", "Description Number", "Game EPROM ID", "Machine Size", "Bill Serial No", "Life Cycle", "Video Game", "Credit Game", "Game Type", "Aux Fill Door No", "GMU Doc ID", "Tokenized", "ECash Enabled", "Ticket Printer", "Coin Acceptor", "Coin Hopper", "E Printer", "Game Protocol", "Playable Tickets", "Game Program ID", "X-Series", "Game Capping", "Max Award", "Venue Progressive", "Start Up", "User Custom 7", "User Custom 8", "User Custom 9", "Hexa Asset Number", "Roulette", "Roulette Id", "Smart Card", "Cashless/MagStrip", "Standard Error", "Game Supports Auto Pay", "ROM Sig Enabled", "Software Name", "EPROM ID", "CRC Request Date", "CRC Request Time", "CRC Count", "CRC Error", "GMU CRC Auth", "CRC Tkt Ecash Disabled", "Communication Protocol", "Bill Validator Capacity", "ROM Sig Error", "Multi Currency", "Asset Value", "Life Span", "Voucher Validation Type", "Purchase Date", "Enrollment Status", "Meter Max Data Type", "Hopper Tare Weight", "PROTOCOL TYPE", "Serial Number", "New Data"], "isEdtitable": true, "sortable": false };
+            var _newdata = { "HiddenId": "HiddenAssetSequence", "DataString": ["Data1", "Data2", "Data3", "Data4"], "isEdtitable": true, "sortable": false };
+
+            var _noneditabledata = { "HiddenId": "HiddenAssetSequence", "DataString": ["Data1", "Data2", "Data3", "Data4"], "isEdtitable": false, "sortable": true };
+
+            var _noneditabledata1 = { "HiddenId": "HiddenAssetSequence", "DataString": ["Data1", "Data2", "Data3", "Data4"], "isEdtitable": false, "sortable": false };
+
+            var _s1 = $('#EditList').EditableList(_data);
+
+            $('#AddNew').click(function () { $('#EditList').EditableList(_data1); });
+
+            $('#Reload').click(function () { $('#EditList').EditableList(_newdata); });
+
+            $('#NonEditable').click(function () { $('#EditList').EditableList(_noneditabledata); });
+
+            $('#NonEditableNonSortable').click(function () { $('#EditList').EditableList(_noneditabledata1); });
+
+        });
+
+    </script>
+</body>
+</html>

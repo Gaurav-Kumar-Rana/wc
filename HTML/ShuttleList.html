@@ -1,0 +1,104 @@
+<html class="Theme2">
+<head>
+
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/BallyShuttlelist.css" rel="stylesheet" />
+    <script src="../JS/Shuttlelist.js"></script>
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+    </style>
+
+    <h4>Shuttle List Control</h4>
+    <div class="medium-12 columns ShuttleList">
+        <div id="ShuttleList"></div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+        <div class="btnElement" id="btnDisable">
+            <button class="btn waves-effect waves-light" id="Disable">Disable</button>
+        </div>
+
+        <div class="btnElement" id="btnUnDisable">
+            <button class="btn waves-effect waves-light" id="UnDisable">Un Disable</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var _data = [{ "Id": "22010", "Code": "22010_2", "Name": "Area Zone Bank" }, { "Id": "102", "Code": "ASSET.LOCATION", "Name": "Asset Location*" }, { "Id": "101", "Code": "ASSET.NUMBER", "Name": "Asset Number*" }, { "Id": "106", "Code": "ASSET.MASTER.ASSET.TYPE", "Name": "Asset Type" }, { "Id": "276", "Code": "ASSET.VALUE", "Name": "Asset Value" }, { "Id": "229", "Code": "ASSET.AUX.FILL.DOOR.NO", "Name": "Aux Fill Door No" }, { "Id": "223", "Code": "ASSET.BILL.SER.NO", "Name": "Bill Serial No" }, { "Id": "273", "Code": "BILL.VALIDATOR.CAPACITY", "Name": "Bill Validator Capacity" }, { "Id": "212", "Code": "ASSET.CAMERA.1", "Name": "Camera 1" }, { "Id": "213", "Code": "ASSET.CAMERA.2", "Name": "Camera 2" }, { "Id": "211", "Code": "ASSET.CAROUSEL", "Name": "Carousel No." }, { "Id": "258", "Code": "MAG.STRIP.CARD", "Name": "Cashless/MagStrip" }, { "Id": "236", "Code": "ASSET.COIN.ACC", "Name": "Coin Acceptor" }, { "Id": "237", "Code": "ASSET.COIN.HOP", "Name": "Coin Hopper" }, { "Id": "272", "Code": "PROTOCOL.VERSION", "Name": "Communication Protocol" }, { "Id": "107", "Code": "ASSET.MASTER.CONFIGURATION.STATUS", "Name": "Configuration Status" }, { "Id": "268", "Code": "ASSET.CRC.COUNT", "Name": "CRC Count" }, { "Id": "269", "Code": "ASSET.CRC.ERROR", "Name": "CRC Error" }, { "Id": "266", "Code": "ASSET.CRC.REQ.DATE", "Name": "CRC Request Date" }, { "Id": "267", "Code": "ASSET.CRC.REQ.TIME", "Name": "CRC Request Time" }, { "Id": "271", "Code": "ASSET.CASLESS.DISAB", "Name": "CRC Tkt Ecash Disabled" }, { "Id": "227", "Code": "ASSET.CREDIT.GAME", "Name": "Credit Game" }, { "Id": "22011", "Code": "22011_3", "Name": "Denomination" }, { "Id": "220", "Code": "ASSET.DESCRIPTION.NUMBER", "Name": "Description Number" }, { "Id": "114", "Code": "ASSET.MASTER.DISPOSITION", "Name": "Disposition" }, { "Id": "238", "Code": "ASSET.E.PRINTER", "Name": "E Printer" }, { "Id": "234", "Code": "ASSET.ECASH.ENABLED", "Name": "ECash Enabled" }, { "Id": "121", "Code": "ASSET.MASTER.EGM.ID", "Name": "EGM ID" }, { "Id": "280", "Code": "OPTION.CODE.ENROLMENT.STATUS", "Name": "Enrollment Status" }, { "Id": "264", "Code": "ASSET.EPROM.ID", "Name": "EPROM ID" }, { "Id": "22011", "Code": "22011_5", "Name": "Fill Denom" }, { "Id": "243", "Code": "ASSET.GAME.CAPPING", "Name": "Game Capping" }, { "Id": "221", "Code": "ASSET.GAME.EPROM.ID", "Name": "Game EPROM ID" }, { "Id": "241", "Code": "ASSET.GAME.PROG.ID", "Name": "Game Program ID" }, { "Id": "239", "Code": "ASSET.GAME.PROTOCOL", "Name": "Game Protocol" }, { "Id": "260", "Code": "ASSET.GAME.SUPPORTS.AUTO.PAY", "Name": "Game Supports Auto Pay" }, { "Id": "228", "Code": "ASSET.GAME.TYPE", "Name": "Game Type" }, { "Id": "270", "Code": "ASSET.GMU.CRC.AUTH", "Name": "GMU CRC Auth" }, { "Id": "22011", "Code": "22011_4", "Name": "GMU Denom" }, { "Id": "232", "Code": "ASSET.GMU.DOC.ID", "Name": "GMU Doc ID" }, { "Id": "253", "Code": "ASSET.USER.CUSTOM.10", "Name": "Hexa Asset Number" }, { "Id": "282", "Code": "ASSET.HOPPER.TARE.WEIGHT", "Name": "Hopper Tare Weight" }, { "Id": "224", "Code": "ASSET.LIFE.CYCLE", "Name": "Life Cycle" }, { "Id": "277", "Code": "ASSET.LIFE.SPAN", "Name": "Life Span" }, { "Id": "201", "Code": "ASSET.LINE.ADDRESS", "Name": "Line Address" }, { "Id": "118", "Code": "ASSET.MASTER.LOCATION.R", "Name": "Location R" }, { "Id": "115", "Code": "ASSET.MASTER.LOCATION.X", "Name": "Location X" }, { "Id": "116", "Code": "ASSET.MASTER.LOCATION.Y", "Name": "Location Y" }, { "Id": "117", "Code": "ASSET.MASTER.LOCATION.Z", "Name": "Location Z" }, { "Id": "222", "Code": "ASSET.MACHINE.SIZE", "Name": "Machine Size" }, { "Id": "245", "Code": "ASSET.USER.CUSTOM.2", "Name": "Max Award" }, { "Id": "231", "Code": "ASSET.MAX.HANDLE.PULL.PER.MIN", "Name": "Max Handle Pull Per Min" }, { "Id": "230", "Code": "ASSET.MAXIMUM.COIN.IN", "Name": "Maximum Coin In" }, { "Id": "281", "Code": "OPTION.CODE.METER.TYPE", "Name": "Meter Max Data Type" }, { "Id": "275", "Code": "ASSET.MULTI.CURRENCY.SUPPORT", "Name": "Multi Currency" }, { "Id": "104", "Code": "ASSET.MASTER.NETWORK.TYPE", "Name": "Network Type" }, { "Id": "218", "Code": "ASSET.PAGER.ZONE", "Name": "Pager Zone" }, { "Id": "240", "Code": "ASSET.PLAYABLE.TKT", "Name": "Playable Tickets" }, { "Id": "125", "Code": "ASSET.ASL.POSITION", "Name": "Position" }, { "Id": "263", "Code": "ASSET.PROG.RATE", "Name": "Progression Rate" }, { "Id": "265", "Code": "ASSET.PROGRESSIVE", "Name": "Progressive" }, { "Id": "284", "Code": "EGM.PROTOCOL.TYPE", "Name": "PROTOCOL TYPE" }, { "Id": "279", "Code": "OPTION.CODE.PURCHASED.DATE", "Name": "Purchase Date" }, { "Id": "119", "Code": "ASSET.MASTER.PURCHASED.AMOUNT", "Name": "Purchased Amount" }, { "Id": "216", "Code": "ASSET.REEL.STRIP", "Name": "Reel Strip" }, { "Id": "215", "Code": "ASSET.NJ.SEAL", "Name": "Regulatory ID*" }, { "Id": "261", "Code": "ASSET.ROM.SIG.ENABLED", "Name": "ROM Sig Enabled" }, { "Id": "274", "Code": "ASSET.ROM.SIG.STATUS", "Name": "ROM Sig Error" }, { "Id": "254", "Code": "ASSET.ROULETTE", "Name": "Roulette" }, { "Id": "255", "Code": "ASSET.ROULETTE.ID", "Name": "Roulette Id" }, { "Id": "103", "Code": "ASSET.SERIAL.NUMBER", "Name": "Serial Number" }, { "Id": "256", "Code": "ASSET.SMART.CARD", "Name": "Smart Card" }, { "Id": "283", "Code": "ASSET.ROM.SIG.SOFTWARE.NAME", "Name": "Software Name" }, { "Id": "120", "Code": "ASSET.MASTER.SOLD.AMOUNT", "Name": "Sold Amount" }, { "Id": "259", "Code": "ASSET.STANDARD.ERROR", "Name": "Standard Error" }, { "Id": "249", "Code": "ASSET.USER.CUSTOM.6", "Name": "Start Up" }, { "Id": "217", "Code": "ASSET.STOOL", "Name": "Stool" }, { "Id": "235", "Code": "ASSET.TICKET.PRINTER", "Name": "Ticket Printer" }, { "Id": "233", "Code": "ASSET.TOKENIZED", "Name": "Tokenized" }, { "Id": "225", "Code": "ASSET.TOURNAMENT.PLAY", "Name": "Tournament Play" }, { "Id": "22069", "Code": "22069_5", "Name": "Type Description Relation" }, { "Id": "250", "Code": "ASSET.USER.CUSTOM.7", "Name": "User Custom 7" }, { "Id": "251", "Code": "ASSET.USER.CUSTOM.8", "Name": "User Custom 8" }, { "Id": "252", "Code": "ASSET.USER.CUSTOM.9", "Name": "User Custom 9" }, { "Id": "219", "Code": "ASSET.VAL.MFG", "Name": "Val Mfg" }, { "Id": "214", "Code": "ASSET.VALID.FILL.NUMBER", "Name": "Valid Fill Number" }, { "Id": "248", "Code": "ASSET.USER.CUSTOM.5", "Name": "Venue Progressive" }, { "Id": "226", "Code": "ASSET.VIDEO.GAME", "Name": "Video Game" }, { "Id": "278", "Code": "ASSET.VOUCHER.VALIDATION.TYPE", "Name": "Voucher Validation Type" }, { "Id": "242", "Code": "ASSET.CASH.CLUB.ENAB", "Name": "X-Series" }];
+            var _data1 = [{ "Id": "22011", "Code": "22010_3", "Name": "New List" }, { "Id": "22010", "Code": "22010_2", "Name": "Area Zone Bank" }, { "Id": "102", "Code": "ASSET.LOCATION", "Name": "Asset Location*" }, { "Id": "101", "Code": "ASSET.NUMBER", "Name": "Asset Number*" }, { "Id": "106", "Code": "ASSET.MASTER.ASSET.TYPE", "Name": "Asset Type" }, { "Id": "276", "Code": "ASSET.VALUE", "Name": "Asset Value" }, { "Id": "229", "Code": "ASSET.AUX.FILL.DOOR.NO", "Name": "Aux Fill Door No" }, { "Id": "223", "Code": "ASSET.BILL.SER.NO", "Name": "Bill Serial No" }, { "Id": "273", "Code": "BILL.VALIDATOR.CAPACITY", "Name": "Bill Validator Capacity" }, { "Id": "212", "Code": "ASSET.CAMERA.1", "Name": "Camera 1" }, { "Id": "213", "Code": "ASSET.CAMERA.2", "Name": "Camera 2" }, { "Id": "211", "Code": "ASSET.CAROUSEL", "Name": "Carousel No." }, { "Id": "258", "Code": "MAG.STRIP.CARD", "Name": "Cashless/MagStrip" }, { "Id": "236", "Code": "ASSET.COIN.ACC", "Name": "Coin Acceptor" }, { "Id": "237", "Code": "ASSET.COIN.HOP", "Name": "Coin Hopper" }, { "Id": "272", "Code": "PROTOCOL.VERSION", "Name": "Communication Protocol" }, { "Id": "107", "Code": "ASSET.MASTER.CONFIGURATION.STATUS", "Name": "Configuration Status" }, { "Id": "268", "Code": "ASSET.CRC.COUNT", "Name": "CRC Count" }, { "Id": "269", "Code": "ASSET.CRC.ERROR", "Name": "CRC Error" }, { "Id": "266", "Code": "ASSET.CRC.REQ.DATE", "Name": "CRC Request Date" }, { "Id": "267", "Code": "ASSET.CRC.REQ.TIME", "Name": "CRC Request Time" }, { "Id": "271", "Code": "ASSET.CASLESS.DISAB", "Name": "CRC Tkt Ecash Disabled" }, { "Id": "227", "Code": "ASSET.CREDIT.GAME", "Name": "Credit Game" }, { "Id": "22011", "Code": "22011_3", "Name": "Denomination" }, { "Id": "220", "Code": "ASSET.DESCRIPTION.NUMBER", "Name": "Description Number" }, { "Id": "114", "Code": "ASSET.MASTER.DISPOSITION", "Name": "Disposition" }, { "Id": "238", "Code": "ASSET.E.PRINTER", "Name": "E Printer" }, { "Id": "234", "Code": "ASSET.ECASH.ENABLED", "Name": "ECash Enabled" }, { "Id": "121", "Code": "ASSET.MASTER.EGM.ID", "Name": "EGM ID" }, { "Id": "280", "Code": "OPTION.CODE.ENROLMENT.STATUS", "Name": "Enrollment Status" }, { "Id": "264", "Code": "ASSET.EPROM.ID", "Name": "EPROM ID" }, { "Id": "22011", "Code": "22011_5", "Name": "Fill Denom" }, { "Id": "243", "Code": "ASSET.GAME.CAPPING", "Name": "Game Capping" }, { "Id": "221", "Code": "ASSET.GAME.EPROM.ID", "Name": "Game EPROM ID" }, { "Id": "241", "Code": "ASSET.GAME.PROG.ID", "Name": "Game Program ID" }, { "Id": "239", "Code": "ASSET.GAME.PROTOCOL", "Name": "Game Protocol" }, { "Id": "260", "Code": "ASSET.GAME.SUPPORTS.AUTO.PAY", "Name": "Game Supports Auto Pay" }, { "Id": "228", "Code": "ASSET.GAME.TYPE", "Name": "Game Type" }, { "Id": "270", "Code": "ASSET.GMU.CRC.AUTH", "Name": "GMU CRC Auth" }, { "Id": "22011", "Code": "22011_4", "Name": "GMU Denom" }, { "Id": "232", "Code": "ASSET.GMU.DOC.ID", "Name": "GMU Doc ID" }, { "Id": "253", "Code": "ASSET.USER.CUSTOM.10", "Name": "Hexa Asset Number" }, { "Id": "282", "Code": "ASSET.HOPPER.TARE.WEIGHT", "Name": "Hopper Tare Weight" }, { "Id": "224", "Code": "ASSET.LIFE.CYCLE", "Name": "Life Cycle" }, { "Id": "277", "Code": "ASSET.LIFE.SPAN", "Name": "Life Span" }, { "Id": "201", "Code": "ASSET.LINE.ADDRESS", "Name": "Line Address" }, { "Id": "118", "Code": "ASSET.MASTER.LOCATION.R", "Name": "Location R" }, { "Id": "115", "Code": "ASSET.MASTER.LOCATION.X", "Name": "Location X" }, { "Id": "116", "Code": "ASSET.MASTER.LOCATION.Y", "Name": "Location Y" }, { "Id": "117", "Code": "ASSET.MASTER.LOCATION.Z", "Name": "Location Z" }, { "Id": "222", "Code": "ASSET.MACHINE.SIZE", "Name": "Machine Size" }, { "Id": "245", "Code": "ASSET.USER.CUSTOM.2", "Name": "Max Award" }, { "Id": "231", "Code": "ASSET.MAX.HANDLE.PULL.PER.MIN", "Name": "Max Handle Pull Per Min" }, { "Id": "230", "Code": "ASSET.MAXIMUM.COIN.IN", "Name": "Maximum Coin In" }, { "Id": "281", "Code": "OPTION.CODE.METER.TYPE", "Name": "Meter Max Data Type" }, { "Id": "275", "Code": "ASSET.MULTI.CURRENCY.SUPPORT", "Name": "Multi Currency" }, { "Id": "104", "Code": "ASSET.MASTER.NETWORK.TYPE", "Name": "Network Type" }, { "Id": "218", "Code": "ASSET.PAGER.ZONE", "Name": "Pager Zone" }, { "Id": "240", "Code": "ASSET.PLAYABLE.TKT", "Name": "Playable Tickets" }, { "Id": "125", "Code": "ASSET.ASL.POSITION", "Name": "Position" }, { "Id": "263", "Code": "ASSET.PROG.RATE", "Name": "Progression Rate" }, { "Id": "265", "Code": "ASSET.PROGRESSIVE", "Name": "Progressive" }, { "Id": "284", "Code": "EGM.PROTOCOL.TYPE", "Name": "PROTOCOL TYPE" }, { "Id": "279", "Code": "OPTION.CODE.PURCHASED.DATE", "Name": "Purchase Date" }, { "Id": "119", "Code": "ASSET.MASTER.PURCHASED.AMOUNT", "Name": "Purchased Amount" }, { "Id": "216", "Code": "ASSET.REEL.STRIP", "Name": "Reel Strip" }, { "Id": "215", "Code": "ASSET.NJ.SEAL", "Name": "Regulatory ID*" }, { "Id": "261", "Code": "ASSET.ROM.SIG.ENABLED", "Name": "ROM Sig Enabled" }, { "Id": "274", "Code": "ASSET.ROM.SIG.STATUS", "Name": "ROM Sig Error" }, { "Id": "254", "Code": "ASSET.ROULETTE", "Name": "Roulette" }, { "Id": "255", "Code": "ASSET.ROULETTE.ID", "Name": "Roulette Id" }, { "Id": "103", "Code": "ASSET.SERIAL.NUMBER", "Name": "Serial Number" }, { "Id": "256", "Code": "ASSET.SMART.CARD", "Name": "Smart Card" }, { "Id": "283", "Code": "ASSET.ROM.SIG.SOFTWARE.NAME", "Name": "Software Name" }, { "Id": "120", "Code": "ASSET.MASTER.SOLD.AMOUNT", "Name": "Sold Amount" }, { "Id": "259", "Code": "ASSET.STANDARD.ERROR", "Name": "Standard Error" }, { "Id": "249", "Code": "ASSET.USER.CUSTOM.6", "Name": "Start Up" }, { "Id": "217", "Code": "ASSET.STOOL", "Name": "Stool" }, { "Id": "235", "Code": "ASSET.TICKET.PRINTER", "Name": "Ticket Printer" }, { "Id": "233", "Code": "ASSET.TOKENIZED", "Name": "Tokenized" }, { "Id": "225", "Code": "ASSET.TOURNAMENT.PLAY", "Name": "Tournament Play" }, { "Id": "22069", "Code": "22069_5", "Name": "Type Description Relation" }, { "Id": "250", "Code": "ASSET.USER.CUSTOM.7", "Name": "User Custom 7" }, { "Id": "251", "Code": "ASSET.USER.CUSTOM.8", "Name": "User Custom 8" }, { "Id": "252", "Code": "ASSET.USER.CUSTOM.9", "Name": "User Custom 9" }, { "Id": "219", "Code": "ASSET.VAL.MFG", "Name": "Val Mfg" }, { "Id": "214", "Code": "ASSET.VALID.FILL.NUMBER", "Name": "Valid Fill Number" }, { "Id": "248", "Code": "ASSET.USER.CUSTOM.5", "Name": "Venue Progressive" }, { "Id": "226", "Code": "ASSET.VIDEO.GAME", "Name": "Video Game" }, { "Id": "278", "Code": "ASSET.VOUCHER.VALIDATION.TYPE", "Name": "Voucher Validation Type" }, { "Id": "242", "Code": "ASSET.CASH.CLUB.ENAB", "Name": "X-Series" }];
+            var _newdata = [{ "Id": "1", "Code": "1", "Name": "Data 1" }, { "Id": "2", "Code": "2", "Name": "Data 2" }, { "Id": "3", "Code": "3", "Name": "Data 3" }]
+
+            var _s1 = $('#ShuttleList').BallyShuttlelist({
+                'target_id': 'multi-select-input',
+                'height': '375',
+                'HiddenID': 'hid_CompAndOptionSelection',
+                'Issearch': true,
+                'ValueMemberId': 'Code',
+                'TitleText': ["Available Options And Components", "Selected Options And Components"],
+                'Isorderchange': true,
+                'DisableAll': false
+            });
+
+            valueHead = [{ title: "Name" }];
+            _s1.DisplayColumn(valueHead);
+            _s1.populate(_data);
+
+
+            $('#AddNew').click(function () { _s1.populate([]);  _s1.populate(_data1); });
+
+            $('#Reload').click(function () { _s1.populate([]); _s1.populate(_newdata); });
+
+            $('#Disable').click(function () {
+                var _s1 = $('#ShuttleList').BallyShuttlelist({
+                    'target_id': 'multi-select-input',
+                    'height': '375',
+                    'HiddenID': 'hid_CompAndOptionSelection',
+                    'Issearch': true,
+                    'ValueMemberId': 'Code',
+                    'TitleText': ["Available Options And Components", "Selected Options And Components"],
+                    'Isorderchange': true,
+                    'DisableAll': true
+                });
+                valueHead = [{ title: "Name" }];
+                _s1.DisplayColumn(valueHead);
+                _s1.populate(_data);
+            });
+            $('#UnDisable').click(function () {
+                var _s1 = $('#ShuttleList').BallyShuttlelist({
+                    'target_id': 'multi-select-input',
+                    'height': '375',
+                    'HiddenID': 'hid_CompAndOptionSelection',
+                    'Issearch': true,
+                    'ValueMemberId': 'Code',
+                    'TitleText': ["Available Options And Components", "Selected Options And Components"],
+                    'Isorderchange': true,
+                    'DisableAll': false
+                });
+                valueHead = [{ title: "Name" }];
+                _s1.DisplayColumn(valueHead);
+                _s1.populate(_data);
+            });
+        });
+
+    </script>
+</body>
+</html>

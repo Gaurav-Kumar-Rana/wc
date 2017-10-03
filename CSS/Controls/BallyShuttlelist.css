@@ -1,0 +1,406 @@
+@font-face {
+    src: url(/Content/MetroTheme/Controls/Fonts/SEGOEUI.TTF), url(/Content/MetroTheme/Controls/Fonts/SEGOEUI.eot); /* IE9+ */
+}
+
+.bally-shuttlelist-selectedliitem {
+    background: green;
+}
+
+
+.shuttle-header {
+    background: #404040;
+    color: #fff;
+    vertical-align: middle;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.bally-shuttlelist-Disable-li {
+    cursor: default;
+    background-color: #efefef !important;
+    height: 40px;
+    line-height: 40px;
+    color: #595959;
+}
+
+.ballyshuttle-container {
+    overflow-y: hidden;
+}
+
+.bally-shuttlelist {
+    /*border:1px solid #F00;*/
+    display: inline-block;
+    width: 100%;
+    min-width: 720px;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    color: #000;
+}
+
+    .bally-shuttlelist ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        height: 200px;
+    }
+
+.bally-shuttlelist-ul {
+    overflow-y: auto;
+    background: #fff;
+}
+
+    .bally-shuttlelist-ul li:nth-child(odd) {
+        background: #fff;
+    }
+
+    .bally-shuttlelist-ul li:nth-child(even) {
+        background: #f2f2f2;
+    }
+
+
+
+.bally-shuttlelist ul li.selector-available {
+    float: left;
+    width: 100%;
+    margin-left: -46%;
+}
+
+li.bally-shuttlelist-selectedliitem {
+    background: #00b050!important;
+    color: #FFF;
+}
+
+    li.bally-shuttlelist-selectedliitem:hover {
+        background: #00A651;
+        color: #FFF;
+    }
+
+.bally-shuttlelist-li {
+    cursor: default;
+    height: 20px;
+    padding: 10px;
+    margin-bottom: 1px;
+}
+
+    .bally-shuttlelist-li:hover {
+        background: #DFDFDF;
+        color: #000;
+    }
+
+.bally-shuttlelist ul li.selector-available div {
+    /*background: none repeat scroll 0 0 #C8FC98;*/
+    margin: 0 100px 0 46%;
+    border: 1px solid #606060;
+}
+
+    .bally-shuttlelist ul li.selector-available div select {
+        width: 100%;
+        height: 200px;
+    }
+
+        .bally-shuttlelist ul li.selector-available div select option {
+            /*margin:5px;
+    padding:5px;*/
+        }
+
+.bally-shuttlelist ul li.selector-chooser {
+    float: left;
+    width: 100px;
+    margin-left: -100px;
+}
+
+    .bally-shuttlelist ul li.selector-chooser ul {
+        margin: 50% 0%;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .bally-shuttlelist ul li.selector-chooser ul li {
+            -webkit-appearance: none;
+            background: #008287;
+            border: 1px solid #008287;
+            color: #FFFFFF;
+            height: 22px;
+            margin: 5px 0;
+            padding: 3px 5px;
+            text-decoration: none;
+            width: 50px;
+        }
+
+            .bally-shuttlelist ul li.selector-chooser ul li a {
+                color: #FFF;
+                text-decoration: none;
+                cursor: default;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li:focus {
+                outline: none;
+                border: 1px dotted #000000 !important;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li:hover {
+                background: #219297;
+                border: 1px solid #219297;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li:focus {
+                outline: none;
+                border: 1px dotted #000000 !important;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li:disabled, .bally-shuttlelist ul li.selector-chooser ul li:disabled:hover {
+                background: #EAEAEA;
+                border: 1px solid #EAEAEA;
+                color: #878787;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li::-moz-focus-inner {
+                border: 0px;
+                outline: 0px;
+            }
+
+            .bally-shuttlelist ul li.selector-chooser ul li:active {
+                border: 1px solid #000000;
+                background: #000000;
+            }
+
+.bally-shuttlelist ul li.selector-chosen {
+    float: left;
+    width: 46%;
+}
+
+    .bally-shuttlelist ul li.selector-chosen div {
+        border: 1px solid #606060;
+    }
+
+        .bally-shuttlelist ul li.selector-chosen div select {
+            width: 100%;
+            height: 200px;
+        }
+
+        .bally-shuttlelist ul li.selector-available div h4, .bally-shuttlelist ul li.selector-chosen div h4 {
+            margin: 0px;
+            padding: 0px 8px;
+            height: 40px;
+            line-height: 40px;
+            background: #606060;
+            color: #FFF;
+        }
+
+.bally-shuttlelist ul li.selector-chooser div a {
+    background-color: #00A651;
+    color: #FFFFFF;
+    display: block;
+    margin: 6px 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #00A651;
+}
+
+    .bally-shuttlelist ul li.selector-chooser div a:hover {
+        background-color: #00A651;
+    }
+
+.bally-shuttlelist ul li.selector-available div h4 span {
+    /*    float: right;*/
+    padding-left: 10px;
+    /*width: 65%;*/
+    display: inline-block;
+}
+
+.bally-shuttlelist .available-head .available-count, .bally-shuttlelist .selected-head .selected-count {
+    padding-left: 10px;
+}
+
+.bally-textbox-filter {
+    -webkit-appearance: none;
+    background: #FFFFFF;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #000;
+    height: 18px;
+    padding: 4px 5px;
+    margin: -5px -5px 0px;
+    overflow: hidden;
+    outline: none;
+    border: 1px solid #BABABA;
+    width: 185px;
+}
+
+    .bally-textbox-filter::-webkit-selection {
+        background-color: #008287;
+        color: #FFF;
+    }
+
+    .bally-textbox-filter::-moz-selection {
+        background-color: #008287;
+        color: #FFF;
+    }
+
+    .bally-textbox-filter:hover {
+        /*border: 1px solid #008287;*/
+    }
+
+.bally-textbox-shuttlelist:disabled {
+    background: #EAEAEA;
+    border: 1px solid #D9D9D9;
+    color: #B7B7B7;
+}
+
+.bally-textbox-filter:focus {
+    outline: none;
+    /*border: 1px solid #008287;*/
+    color: #666;
+}
+
+/*.disabled{	
+	background-color: #8a8a8a !important;
+    cursor: default !important;
+    pointer-events: none !important;
+}*/
+
+.selector-add {
+    background-image: url('Images/Add.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selector-chooseall {
+    background-image: url('Images/AddAll.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selector-remove {
+    background-image: url('Images/Remove.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selector-clearall {
+    background-image: url('Images/RemoveAll.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Asset Matrix*/
+
+.ballyshuttle-container .bally-shuttlelist {
+    min-width: 100%;
+}
+
+    .ballyshuttle-container .bally-shuttlelist .bally-textbox-filter {
+        margin-bottom: 10px;
+        border: 1px solid #d5d5d5;
+        padding: 0px 20px 0px 26px;
+        text-indent: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-li, .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-Disable-li {
+        cursor: default;
+        height: 36px;
+        padding: 5px 10px;
+        margin-bottom: 1px;
+        font-size: 1rem;
+        color: #000;
+    }
+
+        .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-li span, .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-Disable-li span {
+            font-size: 13px;
+            line-height: 26px;
+        }
+
+    .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-Disable-li {
+        background-color: #DFDFDF !important;
+        color: #9F9F9F;
+        line-height: initial;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist .bally-shuttlelist-ul {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-available {
+        width: calc(50% - 50px);
+        margin-left: 0%;
+        float: left;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chooser {
+        width: 100px;
+        margin-left: 0px;
+        margin-top: 112px !important;
+        float: left;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chosen {
+        width: calc(50% - 50px);
+        margin-left: 0%;
+        float: left;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-available div {
+        margin: 0px;
+        border: none;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chosen div {
+        border: none;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chosen .search, .ballyshuttle-container .bally-shuttlelist ul li.selector-available .search {
+        height: 40px;
+        display: block;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-available div h4,
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chosen div h4 {
+        background: none;
+        color: #000;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-available div h4 {
+        margin-bottom: 5px;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul {
+        width: 100%;
+        height: 415px;
+    }
+
+.ballyshuttle-container li.bally-shuttlelist-selectedliitem {
+    background: #00acac !important;
+    color: #fff !important;
+}
+
+.ballyshuttle-container .bally-shuttlelist ul li.selector-chooser div a {
+    background-color: #00acac;
+    border: 1px solid #00acac;
+    clear: both;
+    border-radius: 5px;
+}
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chooser div a:hover {
+        background-color: #389a9d;
+        border: 1px solid #389a9d;
+    }
+
+    .ballyshuttle-container .bally-shuttlelist ul li.selector-chooser div a.disabled {
+        border: 1px solid #DFDFDF;
+    }
+
+.ballyshuttle-container .disabled {
+    background-color: #DFDFDF !important;
+}

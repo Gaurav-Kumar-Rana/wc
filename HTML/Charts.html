@@ -1,0 +1,78 @@
+<html class="">
+<head>
+    <title>Chart Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+
+    <script src="../JS/PLOT/jquery.jqplot.js"></script>
+    <script src="../JS/PLOT/jqplot.pointLabels.js"></script>
+    <script src="../JS/PLOT/jqplot.pieRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.highlighter.js"></script>
+    <script src="../JS/PLOT/jqplot.dateAxisRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.categoryAxisRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.canvasTextRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.canvasAxisTickRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.canvasAxisLabelRenderer.js"></script>
+    <script src="../JS/PLOT/jqplot.barRenderer.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/jquery.jqplot.css" rel="stylesheet" />
+
+    <link href="../CSS/Controls/Charts.css" rel="stylesheet" />
+
+    <script src="../JS/Charts.js"></script>
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+        
+        .ChartGraph #ChartGraph,.ChartGraph {
+            width: 100%;
+            height: 70%;
+        }
+    </style>
+
+    <h4>Chart Control</h4>
+
+    <div class="medium-12 columns ChartGraph">
+        <div id="ChartGraph"></div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var data = { "scheduledData": [{ "y": 10, "myData": "6 July" }, { "y": 0, "myData": "7 July" }, { "y": 5, "myData": "8 July" }, { "y": 11, "myData": "9 July" }, { "y": 32, "myData": "10 July" }, { "y": 6, "myData": "11 July" }, { "y": 23, "myData": "12 July" }, { "y": 11, "myData": "13 July" }, { "y": 15, "myData": "14 July" }, { "y": 10, "myData": "15 July" }, { "y": 2, "myData": "16 July" }, { "y": 0, "myData": "17 July" }, { "y": 0, "myData": "18 July" }, { "y": 0, "myData": "19 July" }, { "y": 0, "myData": "20 July" }], "maxCount": 40, "numberOfDays": 15 };
+
+            var data1  = { "scheduledData": [{ "y": 22, "myData": "6 July" }, { "y": 11, "myData": "7 July" }, { "y": 3, "myData": "8 July" }, { "y": 11, "myData": "9 July" }, { "y": 32, "myData": "10 July" }, { "y": 6, "myData": "11 July" }, { "y": 23, "myData": "12 July" }, { "y": 11, "myData": "13 July" }, { "y": 15, "myData": "14 July" }, { "y": 10, "myData": "15 July" }, { "y": 2, "myData": "16 July" }, { "y": 0, "myData": "17 July" }, { "y": 0, "myData": "18 July" }, { "y": 0, "myData": "19 July" }, { "y": 0, "myData": "20 July" }], "maxCount": 40, "numberOfDays": 15 };
+
+            var newData = { "scheduledData": [{ "y": 10, "myData": "6 July" }, { "y": 0, "myData": "7 July" }, { "y": 5, "myData": "8 July" }, { "y": 11, "myData": "9 July" }, { "y": 32, "myData": "10 July" }, { "y": 6, "myData": "11 July" }, { "y": 23, "myData": "12 July" }, { "y": 11, "myData": "13 July" }, { "y": 15, "myData": "14 July" }, { "y": 10, "myData": "15 July" }, { "y": 2, "myData": "16 July" }, { "y": 8, "myData": "17 July" }, { "y": 13, "myData": "18 July" }, { "y": 0, "myData": "19 July" }, { "y": 0, "myData": "20 July" }], "maxCount": 40, "numberOfDays": 15 };
+
+            $('#ChartGraph').ChartControl({ data: data });
+
+            $('#AddNew').click(function () { $('#ChartGraph').ChartControl('loaddata', newData); });
+
+            $('#Reload').click(function () { $('#ChartGraph').ChartControl('loaddata', data1); });
+
+            $(window).resize(function () {
+                $('#ChartGraph').ChartControl('refresh');
+            });
+        });
+    </script>
+</body>
+</html>

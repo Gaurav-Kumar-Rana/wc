@@ -1,0 +1,43 @@
+<html class="">
+<head>
+    <title>Chart Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/BallyAccordionCheckBoxList.css" rel="stylesheet" />
+    <script src="../JS/AccordionCheckBoxList.js"></script>
+    
+    
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+        .listContainer {
+            height:500px;
+        }
+
+    </style>
+
+    <h4>Check Box List Control</h4>
+
+    <div class="listContainer">
+        <div id="checkboxList"></div>
+    </div>
+
+    <p>&nbsp;</p>
+
+
+    <script>
+        $(document).ready(function () {
+            var _data = { "search": true, "checkbox": true, "valuememberid": "id", "hiddenId": "hidRoleId", "list": [{ "label": "Admin Officer", "id": 9, "informations": { "Code": "AdmOfficer", "Name": "Admin Officer", "Description": "Admin Officer" } }, { "label": "Administrator", "id": 88, "informations": { "Code": "BCC014", "Name": "Administrator", "Description": "" } }, { "label": "Bally Support", "id": 3, "informations": { "Code": "BallySupp", "Name": "Bally Support", "Description": "Bally Support" } }, { "label": "Cashier", "id": 8, "informations": { "Code": "Cashier", "Name": "Cashier", "Description": "Cashier" } }, { "label": "IT Administrator", "id": 4, "informations": { "Code": "ITAdmin", "Name": "IT Administrator", "Description": "IT Administrator" } }, { "label": "Package Installer", "id": 87, "informations": { "Code": "BCC011", "Name": "Package Installer", "Description": "" } }, { "label": "SSC Gaming", "id": 10, "informations": { "Code": "SSCGaming", "Name": "SSC Gaming", "Description": "Gaming Anaylyst" } }, { "label": "SSC Marketing", "id": 11, "informations": { "Code": "SSCMarket", "Name": "SSC Marketing", "Description": "Corporate Marketing Employees" } }, { "label": "SSC Reporting", "id": 12, "informations": { "Code": "SSCReport", "Name": "SSC Reporting", "Description": "Finance and Compliance" } }, { "label": "Super User", "id": 1, "informations": { "Code": "R01", "Name": "Super User", "Description": "Super User role for asset matrix admin " } }, { "label": "System Administrator", "id": 2, "informations": { "Code": "R02", "Name": "System Administrator", "Description": "Responsible for installing, supporting, and maintaining servers or other computer systems. System Administrator also plans and responds to service outages and other technical problems." } }, { "label": "Venue Management", "id": 7, "informations": { "Code": "VenueMgmt", "Name": "Venue Management", "Description": "Venue Managers, Assistant Managers, Gaming Supervisors, Duty Managers" } }] };
+            $("#checkboxList").BallyCheckBoxList(_data);
+        });
+    </script>
+</body>
+</html>

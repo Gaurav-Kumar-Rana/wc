@@ -1,0 +1,88 @@
+.tabPanel {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+    .tabPanel .tabs {
+        display: block;
+        position: initial;
+        background-color: transparent;
+    }
+
+        .tabPanel .tabs .indicator {
+            display: none !important;
+        }
+
+        .tabPanel .tabs .tab {
+            background-color: #F9F9FB;
+            width: 20%;
+            min-width: 122px;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+            letter-spacing: initial;
+            float: left;
+        }
+
+            .tabPanel .tabs .tab:first-child {
+                border-left: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .tabPanel .tabs .tab a {
+                color: #000;
+                border-top: 3px solid transparent;
+                font-size: 14px;
+                line-height: 45px;
+                padding: 0px 15px;
+            }
+
+                .tabPanel .tabs .tab a:hover {
+                    color: #000;
+                }
+
+            .tabPanel .tabs .tab .active {
+                background-color: #FFF;
+                position: relative;
+                border-bottom: 0px solid #FFF !important;
+                color: #00acac !important;
+                border-top: 3px solid #00acac !important;
+                z-index: 1;
+            }
+
+                .tabPanel .tabs .tab .active:hover {
+                    color: #00acac !important;
+                }
+
+    .tabPanel .tabHead {
+        top: 1px;
+        position: relative;
+    }
+
+    .tabPanel .tabBody {
+        top: 1px;
+        height: calc(100% - 47px);
+        position: relative;
+        Border-left: 1px solid rgba(0, 0, 0, 0.1);
+        Border-right: 1px solid rgba(0, 0, 0, 0.1);
+        Border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+        .tabPanel .tabBody:after {
+            content: "";
+            position: absolute;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            height: 1px;
+            width: 100%;
+            top: -1px;
+        }
+
+        .tabPanel .tabBody .tabBodyChild {
+            height: 100%;
+            padding: 15px;
+            display: none;
+            background-color: #fff;
+        }
+
+            .tabPanel .tabBody .tabBodyChild .heading {
+                font-size: 14px;
+            }

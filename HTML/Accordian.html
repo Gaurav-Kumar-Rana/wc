@@ -1,0 +1,56 @@
+<html class="Theme2">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/materialize.min.js"></script>
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <script src="../JS/Accordian.js"></script>
+    <link href="../CSS/Controls/Accordian.css" rel="stylesheet" />
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        #collapsible {
+               min-height: 400px;
+        }
+    </style>
+
+    <h4>Accordion Control</h4>
+
+    <div class="medium-12 columns padding0" id="collapsible"></div>
+    <p>&nbsp;</p>
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+
+        var data = [{ "listHead": "Failed Change Lists", "Count": 10, "listBody": [{ "listBodyEle": "1" }, { "listBodyEle": "2" }, { "listBodyEle": "3" }, { "listBodyEle": "4" }, { "listBodyEle": "5" }, { "listBodyEle": "6" }, { "listBodyEle": "7" }, { "listBodyEle": "8" }, { "listBodyEle": "9" }, { "listBodyEle": "10" }] }, { "listHead": "Pending Master Lists", "Count": 0, "listBody": [] }, { "listHead": "Drafted Master Lists", "Count": 10, "listBody": [{ "listBodyEle": "ML_147_546" }, { "listBodyEle": "ML_157_cvbcv" }, { "listBodyEle": "ML_167_nj" }, { "listBodyEle": "ML_168_646" }, { "listBodyEle": "ML_170_ghj" }, { "listBodyEle": "ML_176_ghg" }, { "listBodyEle": "ML_183_vbnvb" }, { "listBodyEle": "ML_208_ML_196_testProgPooledit01" }, { "listBodyEle": "ML_210_TestPP" }, { "listBodyEle": "ML_211_tert" }] }];
+        var newData = [{ "listHead": "New Added Lists", "Count": 8, "listBody": [{ "listBodyEle": "A" }, { "listBodyEle": "B" }, { "listBodyEle": "C" }, { "listBodyEle": "D" }, { "listBodyEle": "E" }, { "listBodyEle": "F" }, { "listBodyEle": "G" }, { "listBodyEle": "H" }]},{ "listHead": "Failed Change Lists", "Count": 0, "listBody": [] }, { "listHead": "Pending Master Lists", "Count": 0, "listBody": [] }, { "listHead": "Drafted Master Lists", "Count": 10, "listBody": [{ "listBodyEle": "ML_147_546" }, { "listBodyEle": "ML_157_cvbcv" }, { "listBodyEle": "ML_167_nj" }, { "listBodyEle": "ML_168_646" }, { "listBodyEle": "ML_170_ghj" }, { "listBodyEle": "ML_176_ghg" }, { "listBodyEle": "ML_183_vbnvb" }, { "listBodyEle": "ML_208_ML_196_testProgPooledit01" }, { "listBodyEle": "ML_210_TestPP" }, { "listBodyEle": "ML_211_tert" }] }];
+        var data1 = [{ "listHead": "Failed Change Lists", "Count": 8, "listBody": [{ "listBodyEle": "A" }, { "listBodyEle": "B" }, { "listBodyEle": "C" }, { "listBodyEle": "D" }, { "listBodyEle": "E" }, { "listBodyEle": "F" }, { "listBodyEle": "G" }, { "listBodyEle": "H" }] }, { "listHead": "Pending Master Lists", "Count": 0, "listBody": [] }, { "listHead": "Drafted Master Lists", "Count": 10, "listBody": [{ "listBodyEle": "ML_147_546" }, { "listBodyEle": "ML_157_cvbcv" }, { "listBodyEle": "ML_167_nj" }, { "listBodyEle": "ML_168_646" }, { "listBodyEle": "ML_170_ghj" }, { "listBodyEle": "ML_176_ghg" }, { "listBodyEle": "ML_183_vbnvb" }, { "listBodyEle": "ML_208_ML_196_testProgPooledit01" }, { "listBodyEle": "ML_210_TestPP" }, { "listBodyEle": "ML_211_tert" }] }];
+
+
+        $(document).ready(function () {
+            $('#collapsible').Accordian(data);
+
+            $('#AddNew').click(function () { $('#collapsible').Accordian(newData); });
+
+            $('#Reload').click(function () { $('#collapsible').Accordian(data1); });
+
+
+        });
+    </script>
+</body>
+</html>

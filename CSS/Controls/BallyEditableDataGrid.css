@@ -1,0 +1,782 @@
+.cursorPoint {
+    cursor: pointer;
+    position: relative;
+}
+
+    .cursorPoint::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        height: 16px;
+        width: 16px;
+        background-image: url(Images/GridSort.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        margin-left: 5px;
+        right: 12px;
+    }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.bally-editabledatagrid {
+    border-bottom: none;
+    /*min-height:300px !important;*/
+    overflow-x: auto !important;
+    position: relative;
+}
+
+    .bally-editabledatagrid .tableInfo {
+        margin: 0px;
+        padding: 0px 5px 5px 0px;
+        font-size: 12px;
+        text-align: left;
+    }
+
+        .bally-editabledatagrid .tableInfo span {
+            padding: 0px 10px;
+        }
+
+            .bally-editabledatagrid .tableInfo span:first-child {
+                padding-left: 0px;
+            }
+
+            .bally-editabledatagrid .tableInfo span:last-child {
+                padding-right: 0px;
+            }
+
+    .bally-editabledatagrid table {
+        border-spacing: 0;
+        border-collapse: separate;
+        width: 100%;
+        border: 1px solid #D5D5D5;
+    }
+
+        .bally-editabledatagrid table tbody tr.noRecords td {
+            border-bottom: 0px !important;
+        }
+
+        .bally-editabledatagrid table tr td, .bally-editabledatagrid table tr th {
+            padding: 0px 30px 0px 10px !important;
+            border-top: 1px solid #D5D5D5;
+            border-right: 1px solid #D5D5D5;
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-top: none;
+            border-left: none;
+            height: 32px;
+            /*min-width:180px !important;*/
+            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis;
+            border-radius: 0px;
+            font-size: 14px;
+        }
+
+        .bally-editabledatagrid table tr:last-child td {
+            border-bottom: 1px solid #D5D5D5 !important;
+        }
+
+        .bally-editabledatagrid table tr td {
+            /*white-space: inherit;*/
+            line-height: 32px;
+        }
+
+        .bally-editabledatagrid table tr th, .bally-editabledatagrid table tr td {
+            float: left;
+            position: relative;
+        }
+
+            .bally-editabledatagrid table tr th:not(.selectbox) {
+                line-height: 32px;
+            }
+
+            .bally-editabledatagrid table tr th.sort-ascend::after {
+                background-position: 0px -34px;
+            }
+
+            .bally-editabledatagrid table tr th.sort-decend::after {
+                background-position: 0px -16px;
+            }
+
+            .bally-editabledatagrid table tr td.selectbox, .bally-editabledatagrid table tr th.selectbox {
+                min-width: 28px !important;
+            }
+
+        .bally-editabledatagrid table tr th {
+            /*background: #626973;*/
+            color: #666;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .bally-editabledatagrid table tfoot tr td {
+            background: #85929b;
+            color: #fff;
+        }
+
+        .bally-editabledatagrid table tr td:last-child, .bally-editabledatagrid table tr th:last-child {
+            border-right: none;
+        }
+
+        .bally-editabledatagrid table tr td.selectbox, .bally-editabledatagrid table tr th.selectbox {
+            text-align: center;
+        }
+
+        .bally-editabledatagrid table tr td.bally-selected-row {
+            background: #40BABD;
+            color: #fff;
+        }
+
+        .bally-editabledatagrid table tr td.bally-diabled-row {
+            background: #cccccc;
+            color: #dadada;
+        }
+
+        .bally-editabledatagrid table tr.grouper {
+            display: none;
+        }
+
+        .bally-editabledatagrid table tr.groupTitle td {
+            background: url("/Content/RoyaleTheme/Controls/Images/listExpand.png") no-repeat scroll 6px 6px #C6C6C6;
+            padding-left: 32px;
+            cursor: pointer;
+        }
+
+            .bally-editabledatagrid table tr.groupTitle td.down {
+                background: url("/Content/RoyaleTheme/Controls/Images/listCollapse.png") no-repeat scroll 6px 6px #C6C6C6;
+            }
+
+        .bally-editabledatagrid table thead, .bally-editabledatagrid table tbody {
+            display: block;
+            overflow-x: hidden !important;
+        }
+
+        .bally-editabledatagrid table tfoot {
+            overflow-x: hidden !important;
+        }
+
+            .bally-editabledatagrid table tfoot tr {
+                display: inherit !important;
+            }
+
+.bally-editabledatagrid {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    height: 100%;
+}
+
+    .bally-editabledatagrid table tbody {
+        overflow: auto;
+        color: #666;
+        position: relative;
+    }
+
+    .bally-editabledatagrid table tfoot {
+        background-color: #dbe0e4;
+    }
+
+    .bally-editabledatagrid table tbody {
+        background-color: #dbe0e4;
+    }
+
+        .bally-editabledatagrid table tbody > p {
+            /*text-indent: 50px;*/
+            background: #fff;
+            padding: 7px 10px;
+            margin: 0px;
+            text-indent: inherit;
+            text-indent: inherit;
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+    .bally-editabledatagrid table thead {
+        background-color: #626973;
+    }
+
+    .bally-editabledatagrid table tbody tr.highlight {
+        background-color: blue !important;
+    }
+
+        .bally-editabledatagrid table tbody tr.highlight td {
+            color: white !important;
+        }
+
+    .bally-editabledatagrid table tbody td.errorClass, .bally-editabledatagrid table tbody tr.alertClass td {
+        background-color: red !important;
+    }
+
+    .bally-editabledatagrid .pagination {
+        /*margin: 0px !important;
+        display: table-row !important;*/
+    }
+
+    .bally-editabledatagrid .pagination {
+        /*background: #626973; */
+        padding: 5px 0px;
+        margin-top: 10px;
+        /* float: right; */
+        position: absolute;
+        height: 36px;
+        bottom: 5px;
+        right: 0;
+        width: auto;
+    }
+
+    .bally-editabledatagrid + .clearAction {
+        height: 40px;
+        width: 40px;
+        background-color: #40BABD;
+        background-image:url('Images/ClearDatagrid.png');
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        float: right;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .bally-editabledatagrid + .clearAction .clear-icon {
+        height: 100%;
+        width: 100%;
+        cursor:pointer;
+    }
+
+    .bally-editabledatagrid table tr td input[type="text"], .bally-editabledatagrid table tr td, .bally-editabledatagrid table tr th {
+        /*text-align:inherit;*/
+    }
+
+div.pagi-buttongroup {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+    div.pagi-buttongroup div {
+        float: left;
+    }
+
+        div.pagi-buttongroup .pagi-button, div.pagi-buttongroup div.pagi-holder div {
+            /*background: #dbe0e4;*/
+            text-align: center;
+            width: 26px;
+            height: 26px;
+            margin-right: 3px;
+            line-height: 26px;
+            color: grey;
+            cursor: pointer;
+        }
+
+            div.pagi-buttongroup div.pagi-holder div.active {
+                background: #40BABD;
+                color: white;
+                border-radius: 2px;
+            }
+
+        div.pagi-buttongroup div.bally-datagrid-pagiMore {
+            width: auto !important;
+            padding: 0 3px;
+            background: #40BABD !important;
+            color: white !important;
+        }
+
+    div.pagi-buttongroup .disabled {
+        opacity: 0.4 !important;
+    }
+
+
+.filterbox, .filterbox th {
+    /*background: #c7cbcf !important;
+    border-color: #c7cbcf !important;*/
+    border-top: 1px solid #D5d5d5 !important;
+    background-color: #fff;
+}
+
+.bally-editabledatagrid table tfoot tr {
+    width: 200px;
+}
+
+
+label.bally-status-label {
+    height: 100%;
+    float: left;
+    /*line-height:32px; */
+    border-left: 10px solid rgba(0,0,0,0);
+    padding-left: 10px;
+    font-weight: normal !important;
+    /* Firefox */
+    width: -moz-calc(100% - 20px);
+    /* WebKit */
+    width: -webkit-calc(100% - 20px);
+    /* Opera */
+    width: -o-calc(100% - 20px);
+    /* Standard */
+    width: calc(100% - 20px);
+}
+
+label.bally-status-label-true {
+    border-color: #29b378;
+}
+
+label.bally-status-label-false {
+    border-color: #cb4440;
+}
+
+button.bally-actionbar {
+    width: 65px;
+    height: 26px;
+    border: none;
+    padding-left: 25px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #333;
+    margin: 0 2px;
+    text-align: left;
+    display: none;
+}
+
+button.bally-actionbar-view {
+    background: #fff url('/Content/RoyaleTheme/Controls/Images/view.png') no-repeat left top;
+}
+
+button.bally-actionbar-delete {
+    background: #fff url('/Content/RoyaleTheme/Controls/Images/delete.png') no-repeat left top;
+}
+
+button.bally-actionbar-update {
+    background: #fff url('/Content/RoyaleTheme/Controls/Images/action-update.png') no-repeat left top;
+}
+
+button.bally-actionbar-cancel {
+    background: #fff url('/Content/RoyaleTheme/Controls/Images/action-cancel.png') no-repeat left top;
+}
+
+button.bally-actionbar-edit {
+    background: #fff url('/Content/RoyaleTheme/Controls/Images/action-edit.png') no-repeat left top;
+}
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"] + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"] + span::before {
+    border: 1px solid #c8c8c8 !important;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"] + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"] + span::before {
+    content: "";
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0px;
+    text-align: center;
+    background: #fff;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:focus + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:focus + span::before {
+    border: 1px dotted #5e6167 !important;
+}
+
+.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:hover + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:hover + span::before {
+    border: 1px solid #5e6167 !important;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:checked + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:checked + span::before {
+    content: "\2714";
+}*/
+
+.bally-editabledatagrid table tr td.selectbox .bally-checkbox div label,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox div label {
+    margin: 0px !important;
+}
+
+
+.bally-editabledatagrid table tr td div.bally-combobox {
+    /* Firefox */
+    width: -moz-calc(100% - 20px);
+    /* WebKit */
+    width: -webkit-calc(100% - 20px);
+    /* Opera */
+    width: -o-calc(100% - 20px);
+    /* Standard */
+    width: calc(100% - 20px);
+}
+
+
+.fixedMaxWidth {
+    max-width: 150px;
+}
+
+
+
+/*----------Starts::CheckBox----------*/
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"] + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"] + span::before {
+    border: 1px solid #c8c8c8 !important;
+}
+
+.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"] + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"] + span::before {
+    content: "";
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0px;
+    text-align: center;
+    background: #fff;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:focus + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:focus + span::before {
+    border: 1px dotted #5e6167 !important;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:hover + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:hover + span::before {
+    border: 1px solid #5e6167 !important;
+}*/
+
+/*.bally-editabledatagrid table tr td.selectbox .bally-checkbox input[type="checkbox"]:checked + span::before,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox input[type="checkbox"]:checked + span::before {
+    content: "\2714";
+}*/
+.bally-editabledatagrid table tr:first-child th.selectbox .bally-checkbox {
+    top: 6px;
+    position: relative;
+}
+
+.bally-editabledatagrid table tr td.selectbox .bally-checkbox,
+.bally-editabledatagrid table tr th.selectbox .bally-checkbox {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+}
+
+.bally-editabledatagrid table tr td.selectbox .bally-checkbox {
+    padding-top: 5px;
+}
+
+    .bally-editabledatagrid table tr td.selectbox .bally-checkbox label,
+    .bally-editabledatagrid table tr th.selectbox .bally-checkbox label {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+    }
+
+        .bally-editabledatagrid table tr td.selectbox .bally-checkbox label span,
+        .bally-editabledatagrid table tr th.selectbox .bally-checkbox label span {
+            position: relative;
+            padding: 0px;
+            width: 20px;
+            top: 2.5px;
+        }
+
+.bally-editabledatagrid table tr td:not(.selectbox) .bally-checkbox label {
+    float: left;
+}
+
+    .bally-editabledatagrid table tr td:not(.selectbox) .bally-checkbox label input[type=checkbox]:checked + span:after {
+        border: 2px solid #52b152;
+        background-color: #52b152;
+    }
+
+    .bally-editabledatagrid table tr td:not(.selectbox) .bally-checkbox label [type="checkbox"]:not(:checked) + span:after {
+        background-color: #dbdbdb;
+    }
+
+    .bally-editabledatagrid table tr td:not(.selectbox) .bally-checkbox label [type="checkbox"]:not(:checked) + span:before {
+        top: 2px;
+        left: 1px;
+        width: 8px;
+        height: 13px;
+        -webkit-transform: rotateZ(37deg);
+        transform: rotateZ(37deg);
+        -webkit-transform-origin: 20% 40%;
+        transform-origin: 100% 100%;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+/*----------Ends::CheckBox----------*/
+
+.bally-editabledatagrid table tr td div input.bally-combobox-input {
+    padding-right: 10% !important;
+    background-position: 96% center !important;
+    height: 30px !important;
+}
+
+    .bally-editabledatagrid table tr td div input.bally-combobox-input:hover, .bally-editabledatagrid table tr td div input.bally-combobox-input:focus {
+        border: 1px solid #296879 !important;
+    }
+
+    .bally-editabledatagrid table tr td div input.bally-combobox-input:focus {
+        background-color: #38b3b9 !important;
+        color: #fff !important;
+    }
+
+.bally-editabledatagrid table tr.columnSumRow th {
+    background: #85929b !important;
+}
+
+.bally-editabledatagrid td .gridImg {
+    /*width:25px;
+    height:25px;*/
+    margin-right: 5px;
+}
+
+.bally-editabledatagrid .statuslabel {
+    width: 60% !important;
+    /*display: inline-block;*/
+    text-align: left;
+}
+
+.bally-editabledatagrid table tr th .columnswap {
+    /*position:absolute;
+	width: 25px;
+    height: 25px;
+    top: 12px;
+    border: none;
+    background-color: #40BABD;
+    color: #fff;
+	cursor:pointer;
+	z-index:999;
+    border-radius:50%;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;*/
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: 0;
+    border: none;
+    background-color: #40BABD;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    background-repeat: no-repeat;
+    background-size: 9px;
+    background-position: center;
+    padding: 0px;
+}
+
+    .bally-editabledatagrid table tr th .columnswap:hover {
+        background-color: #17879a;
+        opacity: 1;
+    }
+
+    .bally-editabledatagrid table tr th .columnswap:disabled {
+        background-color: #D5D5D5 !important;
+        color: black;
+    }
+
+.bally-editabledatagrid table tr th .swapleft {
+    background-image: url("Images/SwapLeftArrow.png");
+    left: 0px;
+}
+
+.bally-editabledatagrid table tr th .swapright {
+    background-image: url("Images/SwapRightArrow.png");
+    right: 0px;
+}
+
+.bally-editabledatagrid table tr th .resizing {
+    cursor: col-resize;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 0px;
+    background: red;
+    right: -10px;
+    z-index: 99;
+}
+
+
+
+
+.bally-editabledatagrid table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.bally-editabledatagrid .hovered {
+    background-color: #8bd6d8 !important;
+    color: #fff !important;
+}
+
+.bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(odd):hover td, .bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(even):hover td {
+    /*background-color: #8bd6d8;*/
+}
+
+.bally-editabledatagrid table tbody tr:nth-child(even) {
+    background-color: #F4F5F4;
+}
+
+.bally-editabledatagrid table thead {
+    background-color: #E6E6E6;
+}
+
+    .bally-editabledatagrid table thead tr th .bally-textbox {
+        background-color: #fff !important;
+        height: 30px !important;
+        border-bottom: 0px solid transparent !important;
+    }
+
+        .bally-editabledatagrid table thead tr th .bally-textbox:focus {
+            border-bottom: 0px solid transparent !important;
+            box-shadow: none !important;
+        }
+
+.bally-editabledatagrid .clearAction.icon-Clear:before {
+    padding-right: 6px;
+}
+
+/*New Css for Selected row*/
+.bally-editabledatagrid table tr td.bally-selected-row [type="checkbox"]:checked + span:after {
+    border: 1px solid #D5D5D5;
+}
+
+.bally-editabledatagrid table tr td.bally-selected-row {
+    border-bottom: 1px solid #D5D5D5;
+}
+
+/*New css for external scroll biind*/
+.tblScrollBind {
+    display: none;
+    position: absolute;
+    width: 11px;
+    /*
+    right: 0px;
+    bottom: 2px;
+        */
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #dbe0e4;
+    border-right: 1px solid rgb(213, 213, 213);
+}
+
+.tblScrollBody {
+    width: 10px;
+}
+
+.eventOff {
+    pointer-events: none;
+}
+
+.bally-editabledatagrid [type="checkbox"] + span {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 30px;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    height: 100%;
+    color: #000;
+}
+
+.bally-editabledatagrid [type="checkbox"]:checked + span:before {
+    top: calc((100% - 13px)/2);
+    left: 1px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.bally-editabledatagrid [type="checkbox"]:checked + span:after {
+    top: calc((100% - 17px)/2);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00acac;
+    background-color: #00acac;
+    z-index: 0;
+}
+
+.bally-editabledatagrid [type="checkbox"]:not(:checked) + span:before {
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    left: 6px;
+    top: 50%;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 20% 40%;
+    transform-origin: 100% 100%;
+}
+
+.bally-editabledatagrid [type="checkbox"]:not(:checked) + span:after {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    top: calc((100% - 20px)/2);
+    z-index: 0;
+}
+
+.bally-editabledatagrid [type="checkbox"] + span:before, .bally-editabledatagrid [type="checkbox"] + span:after {
+    content: '';
+    left: 0;
+    position: absolute;
+    transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+    z-index: 1;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1a2229;
+    outline: 0px solid #1a2229;
+    border-radius: 0px;
+}
+
+.bally-editabledatagrid input[type=search] + .SearchClear {
+    visibility: hidden;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: calc(50% - (15px/2));
+    right: 5px;
+    background: #c2c2c2;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFF;
+    line-height: 17px;
+    font-size: 6px;
+    cursor: pointer;
+}
+
+    .bally-editabledatagrid input[type=search] + .SearchClear:hover {
+        background: #00acac;
+    }
+
+    .bally-editabledatagrid input[type=search] + .SearchClear .icon-plus {
+        font-size: 9px;
+        line-height: 16px;
+        text-align: center;
+    }

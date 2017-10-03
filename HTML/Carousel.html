@@ -1,0 +1,51 @@
+<html class="Theme2">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/materialize.min.js"></script>
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <script src="../JS/Carousel.js"></script>
+    <link href="../CSS/Controls/Carousel.css" rel="stylesheet" />
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement{
+            float: left;
+            margin: 0px 10px;
+        }
+    </style>
+
+    <h4>Carousel Control</h4>
+
+    <div class="medium-12 columns smallTile padding0 smallTile" id="carousel"></div>
+
+    <p>&nbsp;</p>
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+
+        var data = [{ "listHead": "Top Slot Manufacturers", "listBody": [{ "listCount": 7256, "listBodyTxt": "ARISTOCRAT", "flag": null }, { "listCount": 2573, "listBodyTxt": "IGT", "flag": null }, { "listCount": 2534, "listBodyTxt": "AINSWORTH", "flag": null }] }, { "listHead": "Top Denominations", "listBody": [{ "listCount": 7973, "listBodyTxt": "0.01", "flag": null }, { "listCount": 3091, "listBodyTxt": "0.02", "flag": null }, { "listCount": 1925, "listBodyTxt": "0.05", "flag": null }] }, { "listHead": "Top Progressive Pools", "listBody": [{ "listCount": 14, "listBodyTxt": "LIGHTNING LINK", "flag": null }, { "listCount": 14, "listBodyTxt": "JOKERS JACKPOT", "flag": null }, { "listCount": 14, "listBodyTxt": "LIGHTING LINK", "flag": null }] }];
+        var newData = [{ "listHead": "New Added", "listBody": [{ "listCount": 1111, "listBodyTxt": "ARISTOCRAT", "flag": null }, { "listCount": 222222, "listBodyTxt": "IGT", "flag": null }, { "listCount": 33333, "listBodyTxt": "AINSWORTH", "flag": null }] },{ "listHead": "Top Slot Manufacturers", "listBody": [{ "listCount": 7256, "listBodyTxt": "ARISTOCRAT", "flag": null }, { "listCount": 2573, "listBodyTxt": "IGT", "flag": null }, { "listCount": 2534, "listBodyTxt": "AINSWORTH", "flag": null }] }, { "listHead": "Top Denominations", "listBody": [{ "listCount": 7973, "listBodyTxt": "0.01", "flag": null }, { "listCount": 3091, "listBodyTxt": "0.02", "flag": null }, { "listCount": 1925, "listBodyTxt": "0.05", "flag": null }] }, { "listHead": "Top Progressive Pools", "listBody": [{ "listCount": 14, "listBodyTxt": "LIGHTNING LINK", "flag": null }, { "listCount": 14, "listBodyTxt": "JOKERS JACKPOT", "flag": null }, { "listCount": 14, "listBodyTxt": "LIGHTING LINK", "flag": null }] }];
+        var data1 = [{ "listHead": "Top Slot Manufacturers", "listBody": [{ "listCount": 4589, "listBodyTxt": "ARISTOCRAT", "flag": null }, { "listCount": 3752, "listBodyTxt": "IGT", "flag": null }, { "listCount": 4352, "listBodyTxt": "AINSWORTH", "flag": null }] }, { "listHead": "Top Denominations", "listBody": [{ "listCount": 3797, "listBodyTxt": "0.01", "flag": null }, { "listCount": 1903, "listBodyTxt": "0.02", "flag": null }, { "listCount": 5291, "listBodyTxt": "0.05", "flag": null }] }, { "listHead": "Top Progressive Pools", "listBody": [{ "listCount": 41, "listBodyTxt": "LIGHTNING LINK", "flag": null }, { "listCount": 41, "listBodyTxt": "JOKERS JACKPOT", "flag": null }, { "listCount": 41, "listBodyTxt": "LIGHTING LINK", "flag": null }] }];
+
+
+        $(document).ready(function () {
+            $('#carousel').CustumCarousel({ data: data });
+
+            $('#AddNew').click(function () { $('#carousel').CustumCarousel('reBindData', newData);});
+
+            $('#Reload').click(function () { $('#carousel').CustumCarousel('reBindData', data1);});
+        });
+    </script>
+</body>
+</html>

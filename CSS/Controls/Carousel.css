@@ -1,0 +1,170 @@
+.smallTile {
+    cursor: pointer;
+    height: 120px;
+    float: left;
+    margin: 0px 5px;
+    display: flex;
+}
+
+.smallTile#carousel {
+    width: 100%;
+    min-width: 100%;
+    border: 1px solid #2bbbad;
+}
+
+.carousel .indicators .indicator-item {
+    margin: 0px 4px 5px 4px !important;
+    background-color: rgba(116, 116, 116, 0.5);
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #00acac;
+}
+
+.carousel.carousel-slider .carousel-item {
+    height: inherit !important;
+    min-height: initial;
+    background: #fff;
+}
+
+.carousel .indicators .indicator-item {
+    margin: 0px 4px 5px 4px !important;
+    background-color: rgba(116, 116, 116, 0.5);
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #00acac;
+}
+
+.carousel.carousel-slider .carousel-item h2 {
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 14px;
+    margin: 0px 20px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+    display: block;
+}
+
+.carousel.carousel-slider .carousel-item .description {
+    float: left;
+    width: 33.33%;
+    height: calc(100% - 64px);
+    margin: 0px 0px 8px 0px;
+    border-right: 1px solid #d5d5d5;
+    display: inline-block;
+}
+
+.carousel.carousel-slider .carousel-item .description .count {
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+    color: #1B5784;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carousel.carousel-slider .carousel-item .description .text {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+}
+
+.carousel.carousel-slider .carousel-item .description:last-child {
+    border-right: 0px solid #d5d5d5;
+}
+
+.padding0 {
+    padding: 0px;
+}
+
+<style > .smallTile {
+    cursor: pointer;
+    height: 120px;
+    float: left;
+    margin: 0px 5px;
+    display: flex;
+}
+
+.smallTile#carousel {
+    width: 100%;
+    min-width: 100%;
+}
+
+.carousel .indicators .indicator-item {
+    margin: 0px 4px 5px 4px !important;
+    background-color: rgba(116, 116, 116, 0.5);
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #00acac;
+}
+
+.carousel.carousel-slider .carousel-item {
+    height: inherit !important;
+    min-height: initial;
+    background: #fff;
+}
+
+.carousel .indicators .indicator-item {
+    margin: 0px 4px 5px 4px !important;
+    background-color: rgba(116, 116, 116, 0.5);
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #00acac;
+}
+
+.carousel.carousel-slider .carousel-item h2 {
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 14px;
+    margin: 0px 20px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+    display: block;
+}
+
+.carousel.carousel-slider .carousel-item .description {
+    float: left;
+    width: 33.33%;
+    height: calc(100% - 64px);
+    margin: 0px 0px 8px 0px;
+    border-right: 1px solid #d5d5d5;
+    display: inline-block;
+}
+
+.carousel.carousel-slider .carousel-item .description .count {
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+    color: #1B5784;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carousel.carousel-slider .carousel-item .description .text {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+}
+
+.carousel.carousel-slider .carousel-item .description:last-child {
+    border-right: 0px solid #d5d5d5;
+}
+
+.padding0 {
+    padding: 0px;
+}

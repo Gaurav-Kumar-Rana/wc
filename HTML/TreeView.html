@@ -1,0 +1,55 @@
+<html class="Theme2">
+<head>
+
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/underscore.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+
+    <link href="../CSS/Controls/BallyTreeViewList.css" rel="stylesheet" />    
+    <script src="../JS/TreeViewList.js"></script>
+    <script src="../JS/TreeViewCheckboxList.js"></script>
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        .treeview {
+            height: 500px;
+        }
+    </style>
+
+    <h4>Tree View Control</h4>
+    <div class="medium-12 columns treeview">
+        <div id="treeView"></div>
+    </div>
+    <p>&nbsp;</p>
+
+
+    <script>
+        $(document).ready(function () {
+            var _data = [{ "id": "CL5_Declined", "parent": null, "text": "Declined" }, { "id": "CL1_Executed", "parent": null, "text": "Executed" }, { "id": "CL4_ExecutionInProgress", "parent": null, "text": "ExecutionInProgress" }, { "id": "CL3_Reopened", "parent": null, "text": "Reopened" }, { "id": "CL2_Scheduled", "parent": null, "text": "Scheduled" }];
+            var _data1 = [{ "id": "C4", "parent": null, "text": "Asset Definition", "state": { "opened": false, "disabled": false } }, { "id": "215", "parent": "C4", "text": "Add Asset Definition" }, { "id": "217", "parent": "C4", "text": "Delete Asset Definition" }, { "id": "216", "parent": "C4", "text": "Edit Asset Definition" }, { "id": "218", "parent": "C4", "text": "View Asset Definition" }, { "id": "282", "parent": "C4", "text": "ViewAssetDetail" }, { "id": "C6", "parent": null, "text": "Asset Operations", "state": { "opened": false, "disabled": false } }, { "id": "223", "parent": "C6", "text": "Add Master List" }, { "id": "227", "parent": "C6", "text": "Approve Master List" }, { "id": "231", "parent": "C6", "text": "Decline Change List" }, { "id": "228", "parent": "C6", "text": "Decline Master List" }, { "id": "281", "parent": "C6", "text": "Delete Change List" }, { "id": "226", "parent": "C6", "text": "Delete Master List" }, { "id": "224", "parent": "C6", "text": "Edit Master List" }, { "id": "269", "parent": "C6", "text": "Re-Execute Change List" }, { "id": "238", "parent": "C6", "text": "Re-Execute Failed List" }, { "id": "232", "parent": "C6", "text": "ReOpen Change List" }, { "id": "280", "parent": "C6", "text": "ReOpen Failed List" }, { "id": "229", "parent": "C6", "text": "ReOpen Master List" }, { "id": "239", "parent": "C6", "text": "View Asset Operations" }, { "id": "230", "parent": "C6", "text": "View Change List" }, { "id": "233", "parent": "C6", "text": "View Failed List" }, { "id": "225", "parent": "C6", "text": "View Master List" }, { "id": "C5", "parent": null, "text": "Component Definition", "state": { "opened": true, "disabled": false } }, { "id": "219", "parent": "C5", "text": "Add Component Definition" }, { "id": "221", "parent": "C5", "text": "Delete Component Definition" }, { "id": "220", "parent": "C5", "text": "Edit Component Definition" }, { "id": "222", "parent": "C5", "text": "View Component Definition" }, { "id": "283", "parent": "C5", "text": "ViewComponentDetail" }, { "id": "C8", "parent": null, "text": "Component Data", "state": { "opened": true, "disabled": false } }, { "id": "237", "parent": "C8", "text": "Add/Edit Component Data" }, { "id": "267", "parent": "C8", "text": "Delete Component Data" }, { "id": "240", "parent": "C8", "text": "View Component Data" }, { "id": "C13", "parent": null, "text": "Dashboard", "state": { "opened": true, "disabled": false } }, { "id": "286", "parent": "C13", "text": "View Asset Type Data" }, { "id": "290", "parent": "C13", "text": "View Carousal Data" }, { "id": "291", "parent": "C13", "text": "View Column Chart Data" }, { "id": "285", "parent": "C13", "text": "View Map Data" }, { "id": "287", "parent": "C13", "text": "View Product Sync Data" }, { "id": "289", "parent": "C13", "text": "View Progressive Data" }, { "id": "288", "parent": "C13", "text": "View Slot Data" }, { "id": "C2", "parent": null, "text": "Employee", "state": { "opened": true, "disabled": false } }, { "id": "203", "parent": "C2", "text": "Activate Employee" }, { "id": "212", "parent": "C2", "text": "Add Task Group" }, { "id": "204", "parent": "C2", "text": "Deactivate Employee" }, { "id": "213", "parent": "C2", "text": "Delete Task Group" }, { "id": "202", "parent": "C2", "text": "Edit Employee" }, { "id": "209", "parent": "C2", "text": "Edit Role" }, { "id": "211", "parent": "C2", "text": "Edit Task Group" }, { "id": "206", "parent": "C2", "text": "Reset Password" }, { "id": "205", "parent": "C2", "text": "Unlock Employee" }, { "id": "201", "parent": "C2", "text": "View Employee" }, { "id": "208", "parent": "C2", "text": "View Role" }, { "id": "279", "parent": "C2", "text": "View Task Group" }, { "id": "C10", "parent": null, "text": "Export/Import", "state": { "opened": true, "disabled": false } }, { "id": "247", "parent": "C10", "text": "Asset Export" }, { "id": "245", "parent": "C10", "text": "Asset Import" }, { "id": "246", "parent": "C10", "text": "Component Export" }, { "id": "244", "parent": "C10", "text": "Component Import" }, { "id": "243", "parent": "C10", "text": "View Export Import" }, { "id": "C1", "parent": null, "text": "Preference", "state": { "opened": true, "disabled": false } }, { "id": "102", "parent": "C1", "text": "Edit Preference" }, { "id": "278", "parent": "C1", "text": "Edit Settings" }, { "id": "101", "parent": "C1", "text": "View Preference" }, { "id": "277", "parent": "C1", "text": "View Settings" }, { "id": "C12", "parent": null, "text": "Propagation Management", "state": { "opened": true, "disabled": false } }, { "id": "284", "parent": "C12", "text": "Delete Pending Propagation" }, { "id": "276", "parent": "C12", "text": "Asset Data Recovery" }, { "id": "275", "parent": "C12", "text": "Component Data Recovery" }, { "id": "273", "parent": "C12", "text": "Retrigger Pending Propagation" }, { "id": "271", "parent": "C12", "text": "Save Push Product Configuration" }, { "id": "272", "parent": "C12", "text": "View Pending Propagation" }, { "id": "270", "parent": "C12", "text": "View Push Configuration" }, { "id": "274", "parent": "C12", "text": "View Data Recovery" }, { "id": "C11", "parent": null, "text": "Reports", "state": { "opened": true, "disabled": false } }, { "id": "268", "parent": "C11", "text": "Asset History Report" }, { "id": "250", "parent": "C11", "text": "Asset List Report" }, { "id": "251", "parent": "C11", "text": "Asset Matrix Posting Report" }, { "id": "253", "parent": "C11", "text": "Audit Trail Report" }, { "id": "254", "parent": "C11", "text": "Changelist Report" }, { "id": "255", "parent": "C11", "text": "Employee Listing Report" }, { "id": "256", "parent": "C11", "text": "Game Detail Report" }, { "id": "264", "parent": "C11", "text": "Progressive Slot Pool Listing Report" }, { "id": "257", "parent": "C11", "text": "Role Task Group Report" }, { "id": "258", "parent": "C11", "text": "Role Task Listing Report" }, { "id": "263", "parent": "C11", "text": "Site Listing Report" }, { "id": "259", "parent": "C11", "text": "Slot Configuration By Location Report" }, { "id": "262", "parent": "C11", "text": "Slot Summary Report" }, { "id": "260", "parent": "C11", "text": "Denom Count Report" }, { "id": "261", "parent": "C11", "text": "Game Type Count Report" }, { "id": "249", "parent": "C11", "text": "Manufacturer Count Report" }, { "id": "248", "parent": "C11", "text": "View Reports" }, { "id": "C3", "parent": null, "text": "Site", "state": { "opened": true, "disabled": false } }, { "id": "214", "parent": "C3", "text": "View Site" }, { "id": "C7", "parent": null, "text": "Type Code", "state": { "opened": true, "disabled": false } }, { "id": "234", "parent": "C7", "text": "Add Type Code" }, { "id": "236", "parent": "C7", "text": "Delete Type Code" }, { "id": "235", "parent": "C7", "text": "Edit Type Code" }, { "id": "241", "parent": "C7", "text": "View Type Code" }, { "id": "C9", "parent": null, "text": "Utility", "state": { "opened": true, "disabled": false } }, { "id": "266", "parent": "C9", "text": "Terminate Active Sessions" }, { "id": "265", "parent": "C9", "text": "View Active Sessions" }, { "id": "242", "parent": "C9", "text": "View Asset Search" }];
+            $('#treeView').BallyTreeViewList({
+                core: {
+                    data: _data1,
+                    themes: []
+                },
+                plugins: ["checkbox"],
+                "SelectionChanged": function (selectedId, selectedtext, selectedstate) {
+                    alert(selectedId);
+                },
+                SelectDeselectAllChanged: function (isSelectAll, obj) {
+
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

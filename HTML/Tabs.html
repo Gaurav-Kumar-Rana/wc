@@ -1,0 +1,62 @@
+<html class="">
+<head>
+    <title>Chart Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/materialize.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/Tabs.css" rel="stylesheet" />
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+        .tabPanel {
+            height:500px;
+        }
+    </style>
+
+    <h4>Tab Control</h4>
+
+    <div class="tabPanel">
+        <div class="tabHead">
+            <ul class="tabs">
+                <li class="tab"><a class="active" href="#tabindex1">Tab 1</a></li>
+                <li class="tab"><a href="#tabindex2">Tab 2</a></li>
+            </ul>
+        </div>
+
+        <div class="tabBody fullWidth">
+
+            <div id="tabindex1" class="tabBodyChild">1</div>
+
+            <div id="tabindex2" class="tabBodyChild">2</div>
+
+        </div>
+
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('ul.tabs').tabs();
+        });
+    </script>
+</body>
+</html>

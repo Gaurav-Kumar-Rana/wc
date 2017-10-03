@@ -1,0 +1,82 @@
+<html class="">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/LIB/materialize.min.js"></script>
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <script src="../JS/SearchPanel.js"></script>
+    <link href="../CSS/Controls/SearchPanel.css" rel="stylesheet" />
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+    </style>
+
+    <h4>Search Panel Control</h4>
+
+    <p id="para" style="color:red;">&nbsp;</p>
+
+    <div class="search-panel">
+
+        <div class='searchHead' id="SearchHeader" data-rel="SearchFieldId">
+            <i class="up-arrow"></i>Search Panel
+        </div>
+
+        <button type="button" title="Add Filters" class="btn waves-effect waves-light filterBtn hide" id="filterBtn" data-addmore="FilterbuttonId">Add More</button>
+
+        <div class="AddMoreFilter hide" id="FilterbuttonId">
+            <div class="AddMoreFilterContainer"></div>
+            <div class="searchBtnTab">
+                <button class="btn SgBtnGray waves-effect waves-light">1</button>
+                <button class="btn waves-effect waves-light">2</button>
+            </div>
+        </div>
+
+
+        <div class="search-field fullWidth closed" id="SearchFieldId">
+            <div class="searchElements">
+                <div class="searchFieldTab">
+                    <div class="searchPanelHead">Search Criteria 1</div>
+                </div>
+                <div class="searchFieldTab">
+                    <div class="searchPanelHead">Search Criteria 2</div>
+
+                </div>
+                <div class="searchFieldTab">
+                    <div class="searchPanelHead">Search Criteria 3</div>
+                </div>
+            </div>
+
+            <div class="searchBtnTab">
+                <button class="btn waves-effect waves-light">1</button>
+                <button class="btn waves-effect waves-light">2</button>
+                <button class="btn waves-effect waves-light">3</button>
+                <button class="btn waves-effect waves-light">4</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <script>
+        $(document).ready(function () {
+            $('#SearchHeader').advsearchslider({
+                sliderOpen: false,
+                callback: function () {
+                    $('#para').text('Call back funtion is called on the open of search panel.');
+
+                    setTimeout(function () { $('#para').text('    '); }, 5000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

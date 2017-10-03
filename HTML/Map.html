@@ -1,0 +1,530 @@
+<html class="">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+
+    <script src="../JS/MAP/raphael.js"></script>
+    <script src="../JS/MAP/mapael.js"></script>
+    <script src="../JS/MAP/australia-new.js"></script>
+    <script src="../JS/MAP/france_departments.js"></script>
+    <script src="../JS/MAP/usa_states.js"></script>
+    <script src="../JS/MAP/world_countries.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+
+    <link href="../CSS/Controls/Map.css" rel="stylesheet" />
+
+    <script src="../JS/Map.js"></script>
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        .mapInfo {
+            width: 100%;
+            height: 70%;
+        }
+
+        .mapcontainer {
+    height: calc(100% - 25px);
+    width: 100%;
+}
+    </style>
+
+    <h4>Map Control</h4>
+
+    <div class="mapInfo" id="MapDiv">
+        <h5 class="title"></h5>
+        <div class="mapcontainer">
+            <div class="medium-8 columns map " id="Mapcontainer" style="height: 500px;"></div>
+            <div class="medium-4 columns" id="ListContainer"></div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="WorldMap">World</button>
+        </div>
+        <div class="btnElement">
+            <button class="btn waves-effect waves-light" id="AustraliaMap">Australia</button>
+        </div>
+        <div class="btnElement">
+            <button class="btn waves-effect waves-light" id="FranceMap">France</button>
+        </div>
+        <div class="btnElement">
+            <button class="btn waves-effect waves-light" id="USMap">US</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var data = {
+                "countrycode": "world_countries",
+                //"countrycode": "au",
+                "data": [],
+                "CityData": [
+                   {
+                       "lat": "-12.4324801",
+                       "lon": "130.8462536",
+                       "CityName": "Parap",
+                       "label": 1,
+                       "id": "Parap"
+                   },
+                   {
+                       "lat": "-28.735",
+                       "lon": "114.623",
+                       "CityName": "Bluff Point",
+                       "label": 1,
+                       "id": "Bluff Point"
+                   },
+                   {
+                       "lat": "-32.109",
+                       "lon": "116.926",
+                       "CityName": "Beverley",
+                       "label": 1,
+                       "id": "Beverley"
+                   },
+                   {
+                       "lat": "-28.628",
+                       "lon": "122.403",
+                       "CityName": "Laverton",
+                       "label": 1,
+                       "id": "Laverton"
+                   },
+                   {
+                       "lat": "-37.8284212",
+                       "lon": "140.7803529",
+                       "CityName": "Mt Gambier",
+                       "label": 1,
+                       "id": "Mt Gambier"
+                   },
+                   {
+                       "lat": "-28.497538",
+                       "lon": "150.3616905",
+                       "CityName": "Hamilton",
+                       "label": 1,
+                       "id": "Hamilton"
+                   },
+                   {
+                       "lat": "-42.8821377",
+                       "lon": "147.3271949",
+                       "CityName": "Hobart",
+                       "label": 1,
+                       "id": "Hobart"
+                   },
+                   {
+                       "lat": "-30.298612",
+                       "lon": "153.1093922",
+                       "CityName": "Coffs Harbour",
+                       "label": 1,
+                       "id": "Coffs Harbour"
+                   },
+                   {
+                       "lat": "-33.782",
+                       "lon": "150.798",
+                       "CityName": "Colyton",
+                       "label": 1,
+                       "id": "Colyton"
+                   },
+
+                    {
+                        "lat": 48.86,
+                        "lon": 2.3444444444444,
+                        "CityName": "Paris",
+                        "label": 5,
+                        "id": "town-75056"
+                    },
+                     {
+                         "lat": 43.296666666667,
+                         "lon": 5.3763888888889,
+                         "CityName": "Marseille",
+                         "label": 1,
+                         "id": "town-13055"
+                     },
+                     {
+                         "lat": 45.758888888889,
+                         "lon": 4.8413888888889,
+                         "CityName": "Lyon",
+                         "label": 6,
+                         "id": "town-69123"
+                     },
+                     {
+                         "lat": 43.604444444444,
+                         "lon": 1.4419444444444,
+                         "CityName": "Toulouse",
+                         "label": 8,
+                         "id": "town-31555"
+                     },
+                {
+                    "lat": 43.701944444444,
+                    "lon": 7.2683333333333,
+                    "CityName": "Nice",
+                    "label": 10,
+                    "id": "town-06088"
+
+                },
+                {
+                    "lat": 47.217222222222,
+                    "lon": -1.5538888888889,
+                    "CityName": "Nantes",
+                    "label": 11,
+                    "id": "town-44109"
+                },
+                {
+                    "lat": 48.583611111111,
+                    "lon": 7.7480555555556,
+                    "CityName": "Strasbourg",
+                    "label": 23,
+                    "id": "town-67482"
+
+                },
+                {
+                    "lat": 43.611111111111,
+                    "lon": 3.8766666666667,
+                    "CityName": "Montpellier",
+                    "label": 12,
+                    "id": "town-34172"
+
+                },
+                {
+                    "lat": 44.837777777778,
+                    "lon": -0.57944444444444,
+                    "CityName": "Bordeaux",
+                    "label": 8,
+                    "id": "town-33063"
+                },
+                {
+
+                    "lat": 50.631944444444,
+                    "lon": 3.0575,
+                    "CityName": "Lille",
+                    "label": 2,
+                    "id": "town-59350"
+                },
+                {
+                    "lat": 40.717079,
+                    "lon": -74.00116,
+                    "CityName": "New York",
+                    "label": 5,
+                    "id": "ny"
+                },
+                     {
+                         "lat": 61.2108398,
+                         "lon": -149.9019557,
+                         "CityName": "Anchorage",
+                         "label": 1,
+                         "id": "an"
+                     },
+                     {
+                         "lat": 37.792032,
+                         "lon": -122.394613,
+                         "CityName": "San Francisco",
+                         "label": 6,
+                         "id": "sf"
+                     },
+                     {
+                         "lat": 19.493204,
+                         "lon": -154.8199569,
+                         "CityName": "Pahoa",
+                         "label": 8,
+                         "id": "pa"
+                     },
+                {
+                    "lat": 34.025052,
+                    "lon": -118.192006,
+                    "CityName": "Los Angeles",
+                    "label": 10,
+                    "id": "la"
+
+                },
+                {
+                    "lat": 32.784881,
+                    "lon": -96.808244,
+                    "CityName": "Dallas",
+                    "label": 11,
+                    "id": "dallas"
+                },
+                {
+                    "lat": 25.789125,
+                    "lon": -80.205674,
+                    "CityName": "Miami",
+                    "label": 23,
+                    "id": "miami"
+
+                },
+                {
+                    "lat": 38.90576,
+                    "lon": -77.020746,
+                    "CityName": "Washington",
+                    "label": 12,
+                    "id": "Washington"
+
+                },
+                {
+                    "lat": 47.599571,
+                    "lon": -122.319426,
+                    "CityName": "Seattle",
+                    "label": 8,
+                    "id": "Seattle"
+                }
+                ],
+                "stateCode": [
+                   "new-south-wales",
+                   "northern-territory",
+                   "queensland",
+                   "south-australia",
+                   "tasmania",
+                   "western-australia"
+                ]
+            };
+            var aus = {
+                "countrycode": "au",
+                "data": [],
+                "CityData": [
+                   {
+                       "lat": "-12.4324801",
+                       "lon": "130.8462536",
+                       "CityName": "Parap",
+                       "label": 1,
+                       "id": "Parap"
+                   },
+                   {
+                       "lat": "-28.735",
+                       "lon": "114.623",
+                       "CityName": "Bluff Point",
+                       "label": 1,
+                       "id": "Bluff Point"
+                   },
+                   {
+                       "lat": "-32.109",
+                       "lon": "116.926",
+                       "CityName": "Beverley",
+                       "label": 1,
+                       "id": "Beverley"
+                   },
+                   {
+                       "lat": "-28.628",
+                       "lon": "122.403",
+                       "CityName": "Laverton",
+                       "label": 1,
+                       "id": "Laverton"
+                   },
+                   {
+                       "lat": "-37.8284212",
+                       "lon": "140.7803529",
+                       "CityName": "Mt Gambier",
+                       "label": 1,
+                       "id": "Mt Gambier"
+                   },
+                   {
+                       "lat": "-28.497538",
+                       "lon": "150.3616905",
+                       "CityName": "Hamilton",
+                       "label": 1,
+                       "id": "Hamilton"
+                   },
+                   {
+                       "lat": "-42.8821377",
+                       "lon": "147.3271949",
+                       "CityName": "Hobart",
+                       "label": 1,
+                       "id": "Hobart"
+                   },
+                   {
+                       "lat": "-30.298612",
+                       "lon": "153.1093922",
+                       "CityName": "Coffs Harbour",
+                       "label": 1,
+                       "id": "Coffs Harbour"
+                   },
+                   {
+                       "lat": "-33.782",
+                       "lon": "150.798",
+                       "CityName": "Colyton",
+                       "label": 1,
+                       "id": "Colyton"
+                   }
+                ],
+                "stateCode": [
+                   "new-south-wales",
+                   "northern-territory",
+                   "queensland",
+                   "south-australia",
+                   "tasmania",
+                   "western-australia"
+                ]
+            };
+            var france = {
+                "countrycode": "france_departments",
+                "data": [],
+                "CityData": [
+                    {
+                        "lat": 48.86,
+                        "lon": 2.3444444444444,
+                        "CityName": "Paris",
+                        "label": 5,
+                        "id": "town-75056"
+                    },
+                     {
+                         "lat": 43.296666666667,
+                         "lon": 5.3763888888889,
+                         "CityName": "Marseille",
+                         "label": 1,
+                         "id": "town-13055"
+                     },
+                     {
+                         "lat": 45.758888888889,
+                         "lon": 4.8413888888889,
+                         "CityName": "Lyon",
+                         "label": 6,
+                         "id": "town-69123"
+                     },
+                     {
+                         "lat": 43.604444444444,
+                         "lon": 1.4419444444444,
+                         "CityName": "Toulouse",
+                         "label": 8,
+                         "id": "town-31555"
+                     },
+                {
+                    "lat": 43.701944444444,
+                    "lon": 7.2683333333333,
+                    "CityName": "Nice",
+                    "label": 10,
+                    "id": "town-06088"
+
+                },
+                {
+                    "lat": 47.217222222222,
+                    "lon": -1.5538888888889,
+                    "CityName": "Nantes",
+                    "label": 11,
+                    "id": "town-44109"
+                },
+                {
+                    "lat": 48.583611111111,
+                    "lon": 7.7480555555556,
+                    "CityName": "Strasbourg",
+                    "label": 23,
+                    "id": "town-67482"
+
+                },
+                {
+                    "lat": 43.611111111111,
+                    "lon": 3.8766666666667,
+                    "CityName": "Montpellier",
+                    "label": 12,
+                    "id": "town-34172"
+
+                },
+                {
+                    "lat": 44.837777777778,
+                    "lon": -0.57944444444444,
+                    "CityName": "Bordeaux",
+                    "label": 8,
+                    "id": "town-33063"
+                },
+                {
+
+                    "lat": 50.631944444444,
+                    "lon": 3.0575,
+                    "CityName": "Lille",
+                    "label": 2,
+                    "id": "town-59350"
+                }
+                ],
+                "stateCode": []
+            };
+            var us = {
+                "countrycode": "usa_states",
+                "data": [],
+                "CityData": [
+                    {
+                        "lat": 40.717079,
+                        "lon": -74.00116,
+                        "CityName": "New York",
+                        "label": 5,
+                        "id": "ny"
+                    },
+                     {
+                         "lat": 61.2108398,
+                         "lon": -149.9019557,
+                         "CityName": "Anchorage",
+                         "label": 1,
+                         "id": "an"
+                     },
+                     {
+                         "lat": 37.792032,
+                         "lon": -122.394613,
+                         "CityName": "San Francisco",
+                         "label": 6,
+                         "id": "sf"
+                     },
+                     {
+                         "lat": 19.493204,
+                         "lon": -154.8199569,
+                         "CityName": "Pahoa",
+                         "label": 8,
+                         "id": "pa"
+                     },
+                {
+                    "lat": 34.025052,
+                    "lon": -118.192006,
+                    "CityName": "Los Angeles",
+                    "label": 10,
+                    "id": "la"
+
+                },
+                {
+                    "lat": 32.784881,
+                    "lon": -96.808244,
+                    "CityName": "Dallas",
+                    "label": 11,
+                    "id": "dallas"
+                },
+                {
+                    "lat": 25.789125,
+                    "lon": -80.205674,
+                    "CityName": "Miami",
+                    "label": 23,
+                    "id": "miami"
+
+                },
+                {
+                    "lat": 38.90576,
+                    "lon": -77.020746,
+                    "CityName": "Washington",
+                    "label": 12,
+                    "id": "Washington"
+
+                },
+                {
+                    "lat": 47.599571,
+                    "lon": -122.319426,
+                    "CityName": "Seattle",
+                    "label": 8,
+                    "id": "Seattle"
+                }],
+                "stateCode": []
+            };
+
+            $('#Mapcontainer').MapControl({ data: data });
+            $('#Mapcontainer').parents('.mapInfo').find('h5').text('World Map');
+            $('#WorldMap').click(function () { $('#Mapcontainer').MapControl('loaddata', data); $('#Mapcontainer').parents('.mapInfo').find('h5').text('World Map') });
+            $('#AustraliaMap').click(function () { $('#Mapcontainer').MapControl('loaddata', aus); $('#Mapcontainer').parents('.mapInfo').find('h5').text('Australia Map') });
+            $('#FranceMap').click(function () { $('#Mapcontainer').MapControl('loaddata', france); $('#Mapcontainer').parents('.mapInfo').find('h5').text('France Map') });
+            $('#USMap').click(function () { $('#Mapcontainer').MapControl('loaddata', us); $('#Mapcontainer').parents('.mapInfo').find('h5').text('US Map') });
+            $(window).resize(function () {
+                $('#Mapcontainer').MapControl('reload');
+            });
+        });
+    </script>
+</body>
+</html>

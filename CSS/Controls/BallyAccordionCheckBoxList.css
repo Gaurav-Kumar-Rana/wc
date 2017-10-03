@@ -1,0 +1,337 @@
+.checkboxdropdown {
+    border-top: 1px solid #d5d5d5;
+    border-left: 1px solid #d5d5d5;
+    border-right: 1px solid #d5d5d5;
+}
+
+    .checkboxdropdown li ul {
+        display: none;
+        width: 100%;
+        float: left;
+    }
+
+    .checkboxdropdown .search-field .search {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        border-bottom: 1px solid #d5d5d5 !important;
+    }
+
+        .checkboxdropdown .search-field .search input[type="search"] {
+            border-top: 1px solid transparent !important;
+            border-right: 1px solid transparent !important;
+            border-left: 1px solid transparent !important;
+            border-bottom: 1px solid transparent !important;
+            width: calc(100% - 60px) !important;
+            padding: 0px 30px;
+            text-indent: 0px;
+            margin-bottom: 0px;
+        }
+
+        .checkboxdropdown .search-field .search .listAdd {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            top: 11px;
+            right: 5px;
+            background: #c2c2c2;
+            text-align: center;
+            border-radius: 50%;
+            color: #FFF;
+            line-height: 12px;
+            font-size: 6px;
+            transform: rotate(45deg);
+        }
+
+            .checkboxdropdown .search-field .search .listAdd:hover {
+                background: #00acac;
+                border: 1px solid #00acac;
+            }
+
+    .checkboxdropdown .ListHolder {
+        margin: 0px !important;
+        width: 100%;
+        height: calc(100% - 77px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .checkboxdropdown .ListHolder li.expanded > label, .checkboxdropdown .ListHolder .input-field li.expanded > label {
+            background-color: #d8d8d8 !important;
+        }
+
+        .checkboxdropdown .ListHolder li.expanded ul li label {
+            color: #000;
+        }
+
+        .checkboxdropdown .ListHolder li.expanded ul li:first-child {
+            background-color: #e5e5e5 !important;
+        }
+
+        .checkboxdropdown .ListHolder li.expanded ul li:nth-child(2) {
+            background-color: #ededed !important;
+        }
+
+        .checkboxdropdown .ListHolder li.expanded ul li:last-child {
+            background-color: #f4f4f4 !important;
+        }
+
+            .checkboxdropdown .ListHolder li.expanded ul li:last-child label {
+                text-align: left;
+                width: 100%;
+            }
+
+        .checkboxdropdown .ListHolder li.selected > label, .checkboxdropdown .ListHolder .input-field li.selected > label {
+            color: #fff;
+            background-color: #00acac !important;
+        }
+
+        .checkboxdropdown .ListHolder li.selected ul li label {
+            color: #fff;
+        }
+
+        .checkboxdropdown .ListHolder li.selected ul li:first-child {
+            background-color: #00dfdf !important;
+        }
+
+        .checkboxdropdown .ListHolder li.selected ul li:nth-child(2) {
+            background-color: #00f8f9 !important;
+        }
+
+        .checkboxdropdown .ListHolder li.selected ul li:last-child {
+            background-color: #13ffff !important;
+        }
+
+            .checkboxdropdown .ListHolder li.selected ul li:last-child label {
+                text-align: left;
+            }
+
+        .checkboxdropdown .ListHolder li {
+            background-color: #fff;
+            color: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            display: inline-block;
+            width: 100%;
+        }
+
+            .checkboxdropdown .ListHolder li:first-child {
+                border-top: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .checkboxdropdown .ListHolder li:nth-child(even) {
+                background-color: #f3f3f3;
+            }
+
+            .checkboxdropdown .ListHolder li:nth-child(odd) {
+                background-color: #fff;
+            }
+
+            .checkboxdropdown .ListHolder li label {
+                width: 100%;
+                display: block;
+                padding: 0px 10px;
+                color: #000;
+                font-size: 14px;
+                height: 38px;
+                line-height: 38px;
+            }
+
+                .checkboxdropdown .ListHolder li label span {
+                    width: calc(100% - 25px);
+                    display: block;
+                    float: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .checkboxdropdown .ListHolder li label [type="checkbox"]:not(:checked), .checkboxdropdown .ListHolder li label [type="checkbox"]:checked {
+                    position: absolute;
+                    left: 11px;
+                    top: 10px;
+                    height: 20px;
+                    width: 20px;
+                    z-index: 999;
+                }
+
+                .checkboxdropdown .ListHolder li label i {
+                    top: 7px;
+                    width: 25px;
+                    height: 25px;
+                    right: 10px;
+                    border: 1px solid #e1e1e1;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 18px;
+                    display: block;
+                    float: right;
+                    margin-top: calc((40px - 25px)/2);
+                }
+
+                    .checkboxdropdown .ListHolder li label i::before {
+                        position: relative;
+                        top: 5px;
+                        left: 3px;
+                    }
+
+                
+
+                .checkboxdropdown .ListHolder li label .up-arrow {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                     background-image: url(Images/Darrow.png);
+                    
+                    background-size: 60%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                .checkboxdropdown .ListHolder li label .down-arrow {
+                    background-color: #00acac;
+                   background-image: url(Images/arrow.png);
+                    -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+
+            .checkboxdropdown .ListHolder li ul li {
+                padding: 10px;
+                background-color: #fff;
+                padding: 10px;
+                border-bottom: 1px solid transparent;
+            }
+
+                .checkboxdropdown .ListHolder li ul li:last-child {
+                    border-bottom: 1px solid transparent;
+                }
+
+                .checkboxdropdown .ListHolder li ul li:nth-child(even) {
+                    background-color: #fff;
+                }
+
+                .checkboxdropdown .ListHolder li ul li:nth-child(odd) {
+                    background-color: #fff;
+                }
+
+                .checkboxdropdown .ListHolder li ul li label {
+                    padding: 0px 5px;
+                    display: inline-block;
+                    width: 50%;
+                }
+
+                    .checkboxdropdown .ListHolder li ul li label:first-child {
+                        text-align: left;
+                    }
+
+                    .checkboxdropdown .ListHolder li ul li label:last-child {
+                        text-align: right;
+                    }
+
+.selectAllBallytreeCheckbox {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0px;
+    line-height: 19px;
+    vertical-align: middle;
+    height: 40px;
+}
+
+.checkboxdropdown .SelectAll {
+        line-height: 19px;
+        padding: 0px;
+        font-size: 14px;
+    }
+
+.checkboxdropdown .listControlIcons {
+        margin-left: 5px;
+        background-color: #00acac;
+        padding: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 10px;
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+.checkboxdropdown .ExpandAll {
+    background-image: url(Images/Expand.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.checkboxdropdown .CollapseAll {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background-image: url(Images/Expand.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.checkboxdropdown [type="checkbox"] + span {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 30px;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    height: 100%;
+    color: #000;
+}
+.checkboxdropdown [type="checkbox"]:checked + span:before {
+    top: calc((100% - 13px)/2);
+    left: 1px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+.checkboxdropdown [type="checkbox"]:checked + span:after {
+    top: calc((100% - 20px)/2);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00acac;
+    background-color: #00acac;
+    z-index: 0;
+}
+
+.checkboxdropdown [type="checkbox"]:not(:checked) + span:before {
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    left: 6px;
+    top: 50%;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 20% 40%;
+    transform-origin: 100% 100%;
+}
+.checkboxdropdown [type="checkbox"]:not(:checked) + span:after {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    top: calc((100% - 20px)/2);
+    z-index: 0;
+   
+}
+
+.checkboxdropdown  [type="checkbox"] + span:before, .checkboxdropdown  [type="checkbox"] + span:after {
+    content: '';
+    left: 0;
+    position: absolute;
+    transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+    z-index: 1;
+}

@@ -1,0 +1,173 @@
+<html class="">
+<head>
+    <title>Carousel Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+
+    <script src="../JS/MaxMin.js"></script>
+
+
+
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        .Layout {
+            height: 200px;
+            width: 200px;
+            float: left;
+            background: #fff;
+            display: inline-block;
+            margin: 5px;
+            vertical-align: top;
+            border: 1px solid rgba(0, 0, 0, 0.66);
+            overflow: hidden;
+        }
+
+            .body-container {
+                height: 100%;
+                width: 100%;
+            }
+
+                .body-container iframe {
+                    height: 100%;
+                    width: 100%;
+                    border: 0px;
+                }
+
+        .icon-cross {
+            height: 20px;
+            width: 20px;
+            background: red;
+            display: block;
+            float: right;
+        }
+
+        .subDiv {
+            height: 100%;
+            width: 100%;
+            float: left;
+        }
+
+            .subDiv.positionElement {
+                position: absolute;
+                background-color: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.66);
+                z-index: 1;
+            }
+
+        .max, .min {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+        }
+
+        .max {
+            background: #fff;
+            background-image: url(../CSS/Controls/Images/max.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .min {
+            background: #fff;
+            background-image: url(../CSS/Controls/Images/min.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+        section {
+            height: 100%;
+            width: 100%;
+        }
+
+        .subDiv {
+            position: relative;
+            float: left;
+        }
+    </style>
+
+    <h4>Zoom In Zoom Out Layout</h4>
+
+
+
+    <section>
+        <div class="Layout" id="Layout1">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout1');"></span>
+                <div class="body-container">
+                    <iframe src="BubbleCharts.html"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="Layout" id="Layout2">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout2');"></span>
+                <h1>Div2</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout3">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout3');"></span>
+                <h1>Div3</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout4">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout4');"></span>
+                <h1>Div4</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout5">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout5');"></span>
+                <h1>Div5</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout6">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout6');"></span>
+                <h1>Div6</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout7">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout7');"></span>
+                <h1>Div7</h1>
+            </div>
+        </div>
+        <div class="Layout" id="Layout8">
+            <div class="subDiv">
+                <span class="max" onclick="$(this).BallyMaxMin('Layout8');"></span>
+                <h1>Div8</h1>
+            </div>
+        </div>
+    </section>
+    </
+    <p>&nbsp;</p>
+
+
+    <script>
+        $(document).ready(function () {
+            //$(".Layout").BallyMaxMin($(this).attr('id'));
+        });
+    </script>
+</body>
+</html>

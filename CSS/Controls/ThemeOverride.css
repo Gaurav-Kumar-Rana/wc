@@ -1,0 +1,438 @@
+/*Single Source Dropdown :Start*/
+ng-dropdown-multiselect {
+    position: relative;
+}
+
+.multiselect-parent.dropdown-multiselect {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-toggle {
+    position: relative;
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 0px;
+    color: #000;
+    text-align: left;
+    font-size: 13px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-toggle:hover,.multiselect-parent.dropdown-multiselect .dropdown-toggle:focus{
+    border-bottom: 1px solid #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-toggle .caret::before {
+    content: "\ea50";
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-toggle .caret {
+    position: absolute;
+    display: inline-block;
+    float: right;
+    font-size: 22px;
+    color: #919191;
+    line-height: 28px;
+    top: 0px;
+    right: 0px;
+    -webkit-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important;
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdowncontainer, .multiselect-parent.dropdown-multiselect .dropdown-menu {
+    max-height: 270px;
+    background-color: #fff;
+    border-left: 1px solid rgba(0,0,0,0.12);
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    border-right: 1px solid rgba(0,0,0,0.12);
+    position: absolute;
+    top: 33px;
+    width: 100%;
+    z-index: 2;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-menu li:not(first-child) {
+    line-height: 32px;
+    width: 100%;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-menu li a:hover {
+    background-color: #eee;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-menu li a {
+    color: #000;
+    padding: 0px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.multiselect-parent.dropdown-multiselect .dropdown-menu li a.active {
+    background-color: #00acac;
+    color: #fff;
+}
+/*Single Source Dropdown :End*/
+/*---------------------------------------------------------------Theme 2 Override styles---------------------------------------------------------------*/
+/*Editable Data Grid Styles*/
+.Theme2 .cursorPoint::after {
+    top: calc((100% - 16px)/2);
+}
+
+.Theme2 .bally-editabledatagrid table thead {
+    background-color: #1a2229;
+    color: #fff;
+}
+
+.Theme2 .bally-dynamicdatagrid table thead tr:first-child th {
+    background-color: #1a2229 !important;
+    color: #fff;
+}
+
+    .Theme2 .bally-dynamicdatagrid table thead tr:first-child th span {
+        color: #fff;
+    }
+
+.Theme2 .bally-editabledatagrid table tr th .columnswap {
+    background-color: #00acac;
+}
+
+.Theme2 .bally-editabledatagrid table tr th {
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: lighter;
+}
+
+.Theme2 .bally-editabledatagrid table tr td, .bally-editabledatagrid table tr th {
+    height: 30px;
+    line-height: 30px;
+}
+
+.Theme2 .bally-editabledatagrid table tr td {
+    color: #000;
+    font-size: 14px;
+}
+
+.Theme2 .bally-editabledatagrid table tr:first-child th.selectbox .bally-checkbox {
+    top: 2px;
+}
+
+.Theme2 .bally-editabledatagrid table tr td.selectbox .bally-checkbox {
+    padding-top: 2.5px;
+}
+/*Dynamic Data Grid Style*/
+.Theme2 .bally-dynamicdatagrid table tbody tr:not(.bally-selected-row):hover {
+    background-color: #8bd6d8;
+}
+
+.Theme2 .bally-dynamicdatagrid select:focus {
+    border-bottom: 1px solid #00acac !important;
+    box-shadow: 0 1px 0 0 #00acac !important;
+}
+/*Tree View Control*/
+.Theme2 .ballytree-default .ballytree-clicked > .ballytree-checkbox {
+    border: 2px solid #00acac;
+    background-color: #00acac;
+}
+
+.Theme2 .ballytree-default .ballytree-open > .ballytree-ocl, .Theme2 .ballytree-default .ballytree-closed > .ballytree-ocl:hover {
+    background-color: #00acac;
+}
+/*Dynamic tree Control*/
+.Theme2 .BallyDynamicTree li span.node_name {
+    background: #00acac;
+}
+
+/*---------------------------------------------------------------Theme 3 Override styles---------------------------------------------------------------*/
+/*Editable Data Grid Styles*/
+.Theme3 .cursorPoint::after {
+    top: calc((100% - 16px)/2);
+}
+
+.Theme3 .bally-editabledatagrid table thead {
+    background-color: #54575e;
+    color: #fff;
+}
+
+.Theme3 .bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(odd):hover td,
+.Theme3 .bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(even):hover td,
+.Theme3 .bally-editabledatagrid table tbody tr.hovered td,
+.Theme3 .bally-staticdatagrid table tbody tr:not(.noRecords):nth-child(odd):hover td,
+.Theme3 .bally-staticdatagrid table tbody tr:not(.noRecords):nth-child(even):hover td,
+.Theme3 .bally-dynamicdatagrid table tbody tr:not(.bally-selected-row):hover td {
+    background-color: #d4d7f1;
+}
+
+
+.Theme3 .bally-editabledatagrid table tr td.bally-selected-row,
+.Theme3 .bally-staticdatagrid table tbody tr.bally-selected-row td,
+.Theme3 .bally-dynamicdatagrid table tbody tr.bally-selected-row td {
+    background: #656fbd !important;
+    color: #fff;
+}
+
+.Theme3 .bally-dynamicdatagrid table thead tr:first-child th,
+.Theme3 .bally-staticdatagrid table thead tr:first-child th {
+    background-color: #54575e !important;
+    color: #fff;
+}
+
+    .Theme3 .bally-dynamicdatagrid table thead tr:first-child th span {
+        color: #fff;
+    }
+
+.Theme3 .bally-editabledatagrid table tr th .columnswap {
+    background-color: #6873c2;
+}
+
+.Theme3 .bally-editabledatagrid table tr th {
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: lighter;
+}
+
+.Theme3 .bally-editabledatagrid table tr td, .bally-editabledatagrid table tr th {
+    height: 30px;
+    line-height: 30px;
+}
+
+.Theme3 .bally-editabledatagrid table tr td {
+    color: #000;
+    font-size: 14px;
+}
+
+.Theme3 .bally-editabledatagrid table tr:first-child th.selectbox .bally-checkbox {
+    top: 2px;
+}
+
+.Theme3 .bally-editabledatagrid table tr td.selectbox .bally-checkbox {
+    padding-top: 2.5px;
+}
+
+
+.Theme3 .bally-dynamicdatagrid select:focus {
+    border-bottom: 1px solid #6873c2 !important;
+    box-shadow: 0 1px 0 0 #6873c2 !important;
+}
+
+/*Tree View Control*/
+.Theme3 .ballytree-default .ballytree-clicked > .ballytree-checkbox {
+    border: 2px solid #6873c2;
+    background-color: #6873c2;
+}
+
+.Theme3 .ballytree-default .ballytree-open > .ballytree-ocl, .Theme3 .ballytree-default .ballytree-closed > .ballytree-ocl:hover {
+    background-color: #6873c2;
+}
+
+.Theme3 .ballytree-icon.ballytree-checkbox.ballytree-undetermined:after {
+    background-color: #6873c2 !important;
+}
+/*Dynamic tree Control*/
+.Theme3 .BallyDynamicTree li span.node_name {
+    background: #6873c2;
+}
+/*Report Drop down*/
+.Theme3 .report-list-item .multiselect-parent.dropdown-multiselect .dropdown-menu li a.active {
+    background-color: #6873c2;
+}
+/*Multiselect single source*/
+.Theme3 .multiselect-parent.dropdown-multiselect .dropdown-toggle:hover,.Theme3 .multiselect-parent.dropdown-multiselect .dropdown-toggle:focus{
+    border-bottom: 1px solid #6873c2;
+    box-shadow: 0 1px 0 0 #6873c2;
+}
+/*---------------------------------------------------------------Theme 4 Override styles---------------------------------------------------------------*/
+/*Editable Data Grid Styles*/
+.Theme4 .cursorPoint::after {
+    top: calc((100% - 16px)/2);
+}
+
+.Theme4 .bally-editabledatagrid table thead {
+    background-color: #54575e;
+    color: #fff;
+}
+
+.Theme4 .bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(odd):hover td,
+.Theme4 .bally-editabledatagrid table tbody tr:not(.noRecords):nth-child(even):hover td,
+.Theme4 .bally-editabledatagrid table tbody tr.hovered td,
+.Theme4 .bally-staticdatagrid table tbody tr:not(.noRecords):nth-child(odd):hover td,
+.Theme4 .bally-staticdatagrid table tbody tr:not(.noRecords):nth-child(even):hover td,
+.Theme4 .bally-dynamicdatagrid table tbody tr:not(.bally-selected-row):hover td {
+    background-color: #c2e5f6;
+}
+
+.Theme4 .bally-editabledatagrid table tr td.bally-selected-row,
+.Theme4 .bally-staticdatagrid table tbody tr.bally-selected-row td,
+.Theme4 .bally-dynamicdatagrid table tbody tr.bally-selected-row td {
+    background: #3098ca !important;
+    color: #fff;
+}
+
+.Theme4 .bally-dynamicdatagrid table thead tr:first-child th,
+.Theme4 .bally-staticdatagrid table thead tr:first-child th {
+    background-color: #54575e !important;
+    color: #fff;
+}
+
+    .Theme4 .bally-dynamicdatagrid table thead tr:first-child th span {
+        color: #fff;
+    }
+
+.Theme4 .bally-editabledatagrid table tr th .columnswap {
+    background-color: #3098ca;
+}
+
+.Theme4 .bally-editabledatagrid table tr th {
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: lighter;
+}
+
+.Theme4 .bally-editabledatagrid table tr td, .bally-editabledatagrid table tr th {
+    height: 30px;
+    line-height: 30px;
+}
+
+.Theme4 .bally-editabledatagrid table tr td {
+    color: #000;
+    font-size: 14px;
+}
+
+.Theme4 .bally-editabledatagrid table tr:first-child th.selectbox .bally-checkbox {
+    top: 2px;
+}
+
+.Theme4 .bally-editabledatagrid table tr td.selectbox .bally-checkbox {
+    padding-top: 2.5px;
+}
+
+.Theme4 .bally-dynamicdatagrid select:focus {
+    border-bottom: 1px solid #3098ca !important;
+    box-shadow: 0 1px 0 0 #3098ca !important;
+}
+/*Tree View Control*/
+.Theme4 .ballytree-default .ballytree-clicked > .ballytree-checkbox {
+    border: 2px solid #3098ca;
+    background-color: #3098ca;
+}
+
+.Theme4 .ballytree-default .ballytree-open > .ballytree-ocl, .Theme4 .ballytree-default .ballytree-closed > .ballytree-ocl:hover {
+    background-color: #3098ca;
+}
+
+.Theme4 .ballytree-icon.ballytree-checkbox.ballytree-undetermined:after {
+    background-color: #3098ca !important;
+}
+/*Dynamic tree Control*/
+.Theme4 .BallyDynamicTree li span.node_name {
+    background: #3098ca;
+}
+/*Report Drop down*/
+.Theme4 .report-list-item .multiselect-parent.dropdown-multiselect .dropdown-menu li a.active {
+    background-color: #3098ca;
+}
+/*Multiselect single source*/
+.Theme4 .multiselect-parent.dropdown-multiselect .dropdown-toggle:hover,.Theme4 .multiselect-parent.dropdown-multiselect .dropdown-toggle:focus{
+    border-bottom: 1px solid #3098ca;
+    box-shadow: 0 1px 0 0 #3098ca;
+}
+
+
+
+
+
+/*jq Plot overide css*/
+.jqplot-title {
+    text-indent: 10px;
+}
+
+.jqplot-target {
+    font-family: inherit;
+    color: inherit;
+}
+
+.mapael .zoomButton {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background: #fff;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    margin-left: 15px;
+    cursor: pointer;
+    bottom: 15px;
+}
+
+    .mapael .zoomButton:hover {
+        background-color: rgba(204, 204, 204, 0.2);
+    }
+
+.mapael .zoomOut {
+    bottom: 43px;
+}
+
+.mapael .zoomIn {
+    border-top: 0px solid rgba(0, 0, 0, 0.16);
+}
+
+.mapael .zoomReset {
+    display: none;
+}
+
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: rgba(227, 228, 228, 0.9);
+    border: 1px solid rgba(132, 131, 131, 0.9);
+    padding: 7px;
+    z-index: 99;
+    max-width: 200px;
+    display: none;
+    color: #000;
+    font-size: 12px;
+}
+/*Dynamic Grid Alignment*/
+dynamic-grid > span {
+    display: block;
+    height: 100%;
+}
+/*without media out side master list*/
+#dynamicGridTemplate .ListSearchPanel + .bally-dynamicdatagrid {
+	height: calc(100% - 71px);
+}
+
+/*without media in side master list*/
+#form2 #dynamicGridTemplate .ListSearchPanel + .bally-dynamicdatagrid {
+    height: calc(100% - 51px);
+}
+
+#form2 #dynamicGridTemplate .bally-dynamicdatagrid {
+    height: 100%
+}
+#Mapcontainer{
+	overflow:hidden;
+}

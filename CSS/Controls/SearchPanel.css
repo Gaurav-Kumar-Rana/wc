@@ -1,0 +1,191 @@
+.search-panel {
+    display: block;
+    padding: 0px;
+    position: relative;
+    background-color: #00acac;
+}
+
+    .search-panel .searchHead {
+        height: 30px;
+        line-height: 30px;
+        margin: 0px !important;
+        background: #85aeae;
+        padding: 0px 5px 0px 35px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+    }
+
+    .search-panel .search-field {
+        margin-bottom: 0px;
+        padding: 0px 15px;
+        overflow-y: hidden;
+        transition-property: all;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        background-color: #fff;
+        position: absolute;
+        z-index: 9;
+        width: 100% !important;
+        top: 30px !important;
+        box-shadow: none;
+        border: 1px solid #00acac;
+    }
+
+        .search-panel .search-field.closed {
+            height: 0px !important;
+            border: 0px;
+        }
+
+    .search-panel .searchFieldTab {
+        margin-right: 10px;
+        display: inline-block;
+        height: 100%;
+        margin-bottom: 10px;
+        vertical-align: top;
+        min-width: 200px;
+    }
+
+    .search-panel .searchBtnTab {
+        padding: 10px 0px;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #00acac;
+        margin: 0px;
+    }
+
+    .search-panel .searchElements {
+        width: 100%;
+        margin: 0px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .search-panel .up-arrow {
+        position: absolute;
+        background-color: #fff;
+        top: calc((30px - 18px)/2);
+        background-size: 11px;
+        background-position: 4px center;
+        width: 18px;
+        height: 18px;
+        left: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #00acac;
+        display: block;
+    }
+
+        .search-panel .up-arrow:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #fff;
+            top: 7px;
+            left: 4px;
+        }
+
+        .search-panel .up-arrow:before {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            font-size: 15px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #26a69a;
+        }
+
+    .search-panel .down-arrow {
+        -webkit-transform: rotate(180deg) !important;
+        transform: rotate(180deg) !important;
+    }
+
+        .search-panel .down-arrow:after {
+            top: 6px;
+        }
+
+        .search-panel .down-arrow::before {
+            top: 4px;
+        }
+
+    .search-panel .filterBtn {
+        background-color: #fff;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 5px;
+        width: 100px;
+        position: absolute;
+        right: 5px;
+        top: 0px;
+        z-index: 99;
+        color: #000;
+    }
+
+    .search-panel .search {
+        margin-bottom: 0px;
+        width: 99%;
+    }
+
+    .search-panel .checkBoxList {
+        height: 245px;
+        padding: 0px;
+    }
+
+    .search-panel .searchPanelHead {
+        height: 25px;
+        line-height: 25px;
+        text-indent: 5px;
+        color: #000;
+        font-size: 14px;
+    }
+
+        .search-panel .searchPanelHead .text-section {
+            max-width: calc(100% - 20px);
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .search-panel input[type=text] {
+        text-indent: 5px;
+    }
+
+    .search-panel .AddMoreFilter {
+        position: absolute;
+        background: #fff;
+        top: 40px !important;
+        left: auto !important;
+        right: 2px;
+        height: 320px;
+        width: 300px !important;
+        z-index: 9;
+        border: 2px solid #D5D5D5;
+        padding: 5px 5px 0px 5px;
+        z-index: 99;
+    }
+
+        .search-panel .AddMoreFilter .searchBtnTab {
+            border-top: 1px solid #D5D5D5;
+        }
+
+        .search-panel .AddMoreFilter .AddMoreFilterContainer {
+            height: calc(100% - 57px);
+        }
+
+        .search-panel .AddMoreFilter .ballytree-container-ul > .ballytree-node > .ballytree-anchor {
+            width: calc(100% - 35px);
+        }
+
+        .search-panel .AddMoreFilter .ballytree-default .ballytree-open > .ballytree-ocl, .search-panel .AddMoreFilter .ballytree-default .ballytree-closed > .ballytree-ocl {
+            margin-right: 10px;
+        }

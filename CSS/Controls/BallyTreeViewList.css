@@ -1,0 +1,1355 @@
+/* ballytree default theme */
+.treeview{
+    border: 1px solid #d5d5d5;
+    height:100%;
+}
+.treeview .search {
+    position:relative;
+}
+.treeview input[type="search"]{
+    margin-bottom:0px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: calc(100% - 30px);
+    border: 0px;
+    padding: 0px 15px;
+}
+
+.treeview input[type="search"] + .SearchClear {
+    visibility: hidden;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: calc(50% - (15px/2));
+    right: 5px;
+    background: #c2c2c2;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFF;
+    line-height: 17px;
+    font-size: 6px;
+    cursor: pointer;
+}
+.treeview input[type="search"] + .SearchClear .icon-plus {
+    font-size: 9px;
+    line-height: 16px;
+    text-align: center;
+}
+.treeview .selectAllBallytreeCheckbox {
+    width: calc(100% - 30px);
+    height: 40px;
+    padding: 0px 15px;
+}
+.treeview .selectAllBallytreeCheckbox .left {
+    float:left;
+}
+.treeview .selectAllBallytreeCheckbox .right {
+    float:right;
+}
+.treeview .SelectAll > .ballytree-checkbox{
+    display: block;
+    float: left;
+    margin-top: calc((40px - 19px)/2);
+}
+.ballytree-node,
+.ballytree-children,
+.ballytree-container-ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+ul.ballytree-children {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.ballytree-node {
+    white-space: nowrap;
+}
+
+.ballytree-anchor {
+    display: inline-block;
+    color: black;
+    white-space: nowrap;
+    padding: 0 4px 0 1px;
+    margin: 0;
+    vertical-align: top;
+}
+
+    .ballytree-anchor:focus {
+        outline: 0;
+    }
+
+    .ballytree-anchor,
+    .ballytree-anchor:link,
+    .ballytree-anchor:visited,
+    .ballytree-anchor:hover,
+    .ballytree-anchor:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+.ballytree-icon {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    text-align: center;
+}
+
+    .ballytree-icon:empty {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        vertical-align: top;
+        text-align: center;
+    }
+
+.ballytree-ocl {
+    cursor: pointer;
+}
+
+.ballytree .ballytree-open > .ballytree-children {
+    display: block;
+}
+
+.ballytree .ballytree-closed > .ballytree-children,
+.ballytree .ballytree-leaf > .ballytree-children {
+    display: none;
+}
+
+.ballytree-anchor > .ballytree-themeicon {
+    margin-right: 2px;
+}
+
+.ballytree-no-icons .ballytree-themeicon,
+.ballytree-anchor > .ballytree-themeicon-hidden {
+    display: none;
+}
+
+.ballytree-rtl .ballytree-anchor {
+    padding: 0 1px 0 4px;
+}
+
+    .ballytree-rtl .ballytree-anchor > .ballytree-themeicon {
+        margin-left: 2px;
+        margin-right: 0;
+    }
+
+.ballytree-rtl .ballytree-node {
+    margin-left: 0;
+}
+
+.ballytree-rtl .ballytree-container-ul > .ballytree-node {
+    margin-right: 0;
+}
+
+.ballytree-wholerow-ul {
+    position: relative;
+    display: inline-block;
+    min-width: 100%;
+}
+
+    .ballytree-wholerow-ul .ballytree-anchor,
+    .ballytree-wholerow-ul .ballytree-icon {
+        position: relative;
+    }
+
+    .ballytree-wholerow-ul .ballytree-wholerow {
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+.bally-context {
+    display: none;
+}
+
+    .bally-context,
+    .bally-context ul {
+        margin: 0;
+        padding: 2px;
+        position: absolute;
+        background: #f5f5f5;
+        border: 1px solid #979797;
+        -moz-box-shadow: 5px 5px 4px -4px #666666;
+        -webkit-box-shadow: 2px 2px 2px #999999;
+        box-shadow: 2px 2px 2px #999999;
+    }
+
+        .bally-context ul {
+            list-style: none;
+            left: 100%;
+            margin-top: -2.7em;
+            margin-left: -4px;
+        }
+
+        .bally-context .bally-context-right ul {
+            left: auto;
+            right: 100%;
+            margin-left: auto;
+            margin-right: -4px;
+        }
+
+        .bally-context li {
+            list-style: none;
+            display: inline;
+        }
+
+            .bally-context li a {
+                display: block;
+                padding: 0 2em 0 2em;
+                text-decoration: none;
+                width: auto;
+                color: black;
+                white-space: nowrap;
+                line-height: 2.4em;
+                -moz-text-shadow: 1px 1px 0 white;
+                -webkit-text-shadow: 1px 1px 0 white;
+                text-shadow: 1px 1px 0 white;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                border-radius: 1px;
+            }
+
+                .bally-context li a:hover {
+                    position: relative;
+                    background-color: #e8eff7;
+                    -moz-box-shadow: 0 0 2px #0a6aa1;
+                    -webkit-box-shadow: 0 0 2px #0a6aa1;
+                    box-shadow: 0 0 2px #0a6aa1;
+                }
+
+                .bally-context li a.bally-context-parent {
+                    background-image: url("data:image/gif;base64,R0lGODlhCwAHAIAAACgoKP///yH5BAEAAAEALAAAAAALAAcAAAIORI4JlrqN1oMSnmmZDQUAOw==");
+                    background-position: right center;
+                    background-repeat: no-repeat;
+                }
+
+        .bally-context .bally-context-hover > a {
+            position: relative;
+            background-color: #e8eff7;
+            -moz-box-shadow: 0 0 2px #0a6aa1;
+            -webkit-box-shadow: 0 0 2px #0a6aa1;
+            box-shadow: 0 0 2px #0a6aa1;
+        }
+
+        .bally-context .bally-context-separator a,
+        .bally-context .bally-context-separator a:hover {
+            background: white;
+            border: 0;
+            border-top: 1px solid #e2e3e3;
+            height: 1px;
+            min-height: 1px;
+            max-height: 1px;
+            padding: 0;
+            margin: 0 0 0 2.4em;
+            border-left: 1px solid #e0e0e0;
+            -moz-text-shadow: 0 0 0 transparent;
+            -webkit-text-shadow: 0 0 0 transparent;
+            text-shadow: 0 0 0 transparent;
+            -moz-box-shadow: 0 0 0 transparent;
+            -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+        }
+
+        .bally-context .bally-contextmenu-disabled a,
+        .bally-context .bally-contextmenu-disabled a:hover {
+            color: silver;
+            background-color: transparent;
+            border: 0;
+            box-shadow: 0 0 0;
+        }
+
+        .bally-context li a ins {
+            text-decoration: none;
+            display: inline-block;
+            width: 2.4em;
+            height: 2.4em;
+            background: transparent;
+            margin: 0 0 0 -2em;
+        }
+
+        .bally-context li a span {
+            display: inline-block;
+            width: 1px;
+            height: 2.4em;
+            background: white;
+            margin: 0 0.5em 0 0;
+            border-left: 1px solid #e2e3e3;
+        }
+
+.bally-context-rtl ul {
+    left: auto;
+    right: 100%;
+    margin-left: auto;
+    margin-right: -4px;
+}
+
+.bally-context-rtl li a.bally-context-parent {
+    background-image: url("data:image/gif;base64,R0lGODlhCwAHAIAAACgoKP///yH5BAEAAAEALAAAAAALAAcAAAINjI+AC7rWHIsPtmoxLAA7");
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.bally-context-rtl .bally-context-separator a {
+    margin: 0 2.4em 0 0;
+    border-left: 0;
+    border-right: 1px solid #e2e3e3;
+}
+
+.bally-context-rtl .bally-context-left ul {
+    right: auto;
+    left: 100%;
+    margin-left: -4px;
+    margin-right: auto;
+}
+
+.bally-context-rtl li a ins {
+    margin: 0 -2em 0 0;
+}
+
+.bally-context-rtl li a span {
+    margin: 0 0 0 0.5em;
+    border-left-color: white;
+    background: #e2e3e3;
+}
+
+#ballytree-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-right: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+#ballytree-dnd {
+    line-height: 16px;
+    margin: 0;
+    padding: 4px;
+}
+
+    #ballytree-dnd .ballytree-icon,
+    #ballytree-dnd .ballytree-copy {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0 2px 0 0;
+        padding: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    #ballytree-dnd .ballytree-ok {
+        background: green;
+    }
+
+    #ballytree-dnd .ballytree-er {
+        background: red;
+    }
+
+    #ballytree-dnd .ballytree-copy {
+        margin: 0 2px 0 2px;
+    }
+
+.ballytree-default .ballytree-node,
+.ballytree-default .ballytree-icon {
+    font-size: 13px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.ballytree-default .ballytree-anchor,
+.ballytree-default .ballytree-wholerow {
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.ballytree-default .ballytree-hovered {
+    /*background: rgba(63,178,197,0.6);*/
+    border-radius: 0;
+    /*color:#fff !important;*/
+    /* box-shadow: inset 0 0 1px #ccc;*/
+}
+
+.ballytree-default .ballytree-clicked {
+    /*background: #3fb2c5;*/
+    background: #FFF;
+    border-radius: 0;
+    /*color:#fff;*/
+}
+
+.ballytree-default .ballytree-no-icons .ballytree-anchor > .ballytree-themeicon {
+    display: none;
+}
+
+.ballytree-default .ballytree-disabled {
+    background: transparent;
+    color: #666;
+    opacity: 0.55;
+}
+
+    .ballytree-default .ballytree-disabled.ballytree-hovered {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .ballytree-default .ballytree-disabled.ballytree-clicked {
+        background: #efefef;
+    }
+
+    .ballytree-default .ballytree-disabled > .ballytree-icon {
+        opacity: 0.8;
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'ballytree-grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#ballytree-grayscale");
+        /* Firefox 10+ */
+        filter: gray;
+        /* IE6-9 */
+        -webkit-filter: grayscale(100%);
+        /* Chrome 19+ & Safari 6+ */
+    }
+
+.ballytree-default .ballytree-search {
+    font-style: italic;
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.ballytree-default .ballytree-no-checkboxes .ballytree-checkbox {
+    display: none !important;
+}
+
+.ballytree-default.ballytree-checkbox-no-clicked .ballytree-clicked {
+    background: transparent;
+    box-shadow: none;
+}
+
+    .ballytree-default.ballytree-checkbox-no-clicked .ballytree-clicked.ballytree-hovered {
+        background: #e7f4f9;
+    }
+
+.ballytree-default.ballytree-checkbox-no-clicked > .ballytree-wholerow-ul .ballytree-wholerow-clicked {
+    background: transparent;
+}
+
+    .ballytree-default.ballytree-checkbox-no-clicked > .ballytree-wholerow-ul .ballytree-wholerow-clicked.ballytree-wholerow-hovered {
+        background: #e7f4f9;
+    }
+
+#ballytree-dnd.ballytree-default .ballytree-ok,
+#ballytree-dnd.ballytree-default .ballytree-er {
+    background-image: url("Images/TreeviewAM.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#ballytree-dnd.ballytree-default i {
+    background: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+#ballytree-dnd.ballytree-default .ballytree-ok {
+    background-position: -9px -71px;
+}
+
+#ballytree-dnd.ballytree-default .ballytree-er {
+    background-position: -39px -71px;
+}
+
+.ballytree-default > .ballytree-striped {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAMAAAB/qqA+AAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMNAMM9s3UAAAAXSURBVHjajcEBAQAAAIKg/H/aCQZ70AUBjAATb6YPDgAAAABJRU5ErkJggg==") left top repeat;
+}
+
+.ballytree-default > .ballytree-wholerow-ul .ballytree-hovered,
+.ballytree-default > .ballytree-wholerow-ul .ballytree-clicked {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.ballytree-default .ballytree-wholerow {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ballytree-default .ballytree-wholerow-hovered {
+    background: #e7f4f9;
+}
+
+.ballytree-default .ballytree-wholerow-clicked {
+    background: #beebff;
+    background: -moz-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #beebff), color-stop(100%, #a8e4ff));
+    background: -webkit-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+    background: -o-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+    background: -ms-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+    background: linear-gradient(to bottom, #beebff 0%, #a8e4ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color1', endColorstr='@color2', GradientType=0);
+}
+
+.ballytree-default .ballytree-node {
+    min-height: 30px;
+    line-height: 30px;
+    margin-left: 35px;
+    min-width: 24px;
+}
+
+.ballytree-default .ballytree-anchor {
+    line-height: 40px;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.ballytree-default .ballytree-icon {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
+    .ballytree-default .ballytree-icon:empty {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+
+.ballytree-default.ballytree-rtl .ballytree-node {
+    margin-right: 24px;
+}
+
+.ballytree-default .ballytree-wholerow {
+    height: 24px;
+}
+
+.ballytree-default .ballytree-node,
+.ballytree-default .ballytree-icon {
+    background-image: url("Images/TreeviewAM.png");
+}
+
+.ballytree-default .ballytree-node {
+    background-position: -292px -4px;
+    background-repeat: repeat-y;
+}
+
+.ballytree-default .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default .ballytree-open > .ballytree-ocl {
+    background-position: -132px -4px;
+}
+
+.ballytree-default .ballytree-closed > .ballytree-ocl {
+    background-position: -100px -4px;
+}
+
+.ballytree-default .ballytree-leaf > .ballytree-ocl {
+    background-position: -68px -4px;
+    display: none;
+}
+
+.ballytree-default .ballytree-anchor > .ballytree-themeicon {
+    background-position: -260px -4px;
+}
+
+.ballytree-default > .ballytree-no-dots .ballytree-node,
+.ballytree-default > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -132px -4px;
+}
+
+.ballytree-default > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: -4px -4px;
+}
+
+.ballytree-default .ballytree-disabled {
+    background: transparent;
+}
+
+    .ballytree-default .ballytree-disabled.ballytree-hovered {
+        background: transparent;
+    }
+
+    .ballytree-default .ballytree-disabled.ballytree-clicked {
+        background: #efefef;
+    }
+
+.ballytree-default .ballytree-checkbox {
+    background-position: -164px -4px;
+}
+
+    .ballytree-default .ballytree-checkbox:hover {
+        background-position: -164px -36px;
+    }
+
+.ballytree-default .ballytree-clicked > .ballytree-checkbox {
+    background-position: -228px -4px;
+}
+
+    .ballytree-default .ballytree-clicked > .ballytree-checkbox:hover {
+        background-position: -228px -36px;
+    }
+
+.ballytree-default .ballytree-anchor > .ballytree-undetermined {
+    background-position: -196px -4px;
+}
+
+    .ballytree-default .ballytree-anchor > .ballytree-undetermined:hover {
+        background-position: -196px -36px;
+    }
+
+.ballytree-default > .ballytree-striped {
+    background-size: auto 48px;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAACAQMAAAB49I5GAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjAAMOBgAAGAAJMwQHdQAAAABJRU5ErkJggg==");
+    background-position: 100% 1px;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-open > .ballytree-ocl {
+    background-position: -132px -36px;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-closed > .ballytree-ocl {
+    background-position: -100px -36px;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-leaf > .ballytree-ocl {
+    background-position: -68px -36px;
+}
+
+.ballytree-default.ballytree-rtl > .ballytree-no-dots .ballytree-node,
+.ballytree-default.ballytree-rtl > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default.ballytree-rtl > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -36px -36px;
+}
+
+.ballytree-default.ballytree-rtl > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: -4px -36px;
+}
+
+.ballytree-default .ballytree-themeicon-custom {
+    background-color: transparent;
+    background-image: none;
+}
+
+.ballytree-default > .ballytree-container-ul .ballytree-loading > .ballytree-ocl {
+    background: url("Images/throbber.gif") center center no-repeat;
+}
+
+.ballytree-default.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAACAQMAAAB49I5GAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjAAMOBgAAGAAJMwQHdQAAAABJRU5ErkJggg==");
+    background-position: 100% 1px;
+}
+
+.ballytree-default-small .ballytree-node {
+    min-height: 18px;
+    line-height: 18px;
+    margin-left: 18px;
+    min-width: 18px;
+}
+
+.ballytree-default-small .ballytree-anchor {
+    line-height: 18px;
+    height: 18px;
+}
+
+.ballytree-default-small .ballytree-icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+
+    .ballytree-default-small .ballytree-icon:empty {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+
+.ballytree-default-small.ballytree-rtl .ballytree-node {
+    margin-right: 18px;
+}
+
+.ballytree-default-small .ballytree-wholerow {
+    height: 18px;
+}
+
+.ballytree-default-small .ballytree-node,
+.ballytree-default-small .ballytree-icon {
+    background-image: url("Images/TreeviewAM.png");
+}
+
+.ballytree-default-small .ballytree-node {
+    background-position: -295px -7px;
+    background-repeat: repeat-y;
+}
+
+.ballytree-default-small .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default-small .ballytree-open > .ballytree-ocl {
+    background-position: -135px -7px;
+}
+
+.ballytree-default-small .ballytree-closed > .ballytree-ocl {
+    background-position: -103px -7px;
+}
+
+.ballytree-default-small .ballytree-leaf > .ballytree-ocl {
+    background-position: -71px -7px;
+}
+
+.ballytree-default-small .ballytree-anchor > .ballytree-themeicon {
+    background-position: -263px -7px;
+}
+
+.ballytree-default-small > .ballytree-no-dots .ballytree-node,
+.ballytree-default-small > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default-small > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -39px -7px;
+}
+
+.ballytree-default-small > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: -7px -7px;
+}
+
+.ballytree-default-small .ballytree-disabled {
+    background: transparent;
+}
+
+    .ballytree-default-small .ballytree-disabled.ballytree-hovered {
+        background: transparent;
+    }
+
+    .ballytree-default-small .ballytree-disabled.ballytree-clicked {
+        background: #efefef;
+    }
+
+.ballytree-default-small .ballytree-checkbox {
+    background-position: -167px -7px;
+}
+
+    .ballytree-default-small .ballytree-checkbox:hover {
+        background-position: -167px -39px;
+    }
+
+.ballytree-default-small .ballytree-clicked > .ballytree-checkbox {
+    background-position: -231px -7px;
+}
+
+    .ballytree-default-small .ballytree-clicked > .ballytree-checkbox:hover {
+        background-position: -231px -39px;
+    }
+
+.ballytree-default-small .ballytree-anchor > .ballytree-undetermined {
+    background-position: -199px -7px;
+}
+
+    .ballytree-default-small .ballytree-anchor > .ballytree-undetermined:hover {
+        background-position: -199px -39px;
+    }
+
+.ballytree-default-small > .ballytree-striped {
+    background-size: auto 36px;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAACAQMAAAB49I5GAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjAAMOBgAAGAAJMwQHdQAAAABJRU5ErkJggg==");
+    background-position: 100% 1px;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-open > .ballytree-ocl {
+    background-position: -135px -39px;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-closed > .ballytree-ocl {
+    background-position: -103px -39px;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-leaf > .ballytree-ocl {
+    background-position: -71px -39px;
+}
+
+.ballytree-default-small.ballytree-rtl > .ballytree-no-dots .ballytree-node,
+.ballytree-default-small.ballytree-rtl > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default-small.ballytree-rtl > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -39px -39px;
+}
+
+.ballytree-default-small.ballytree-rtl > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: -7px -39px;
+}
+
+.ballytree-default-small .ballytree-themeicon-custom {
+    background-color: transparent;
+    background-image: none;
+}
+
+.ballytree-default-small > .ballytree-container-ul .ballytree-loading > .ballytree-ocl {
+    background: url("Images/throbber.gif") center center no-repeat;
+}
+
+.ballytree-default-small.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAACAQMAAABv1h6PAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjAAMHBgAAiABBI4gz9AAAAABJRU5ErkJggg==");
+    background-position: 100% 0px;
+}
+
+.ballytree-default-large .ballytree-node {
+    min-height: 32px;
+    line-height: 32px;
+    margin-left: 32px;
+    min-width: 32px;
+}
+
+.ballytree-default-large .ballytree-anchor {
+    line-height: 32px;
+    height: 32px;
+}
+
+.ballytree-default-large .ballytree-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+
+    .ballytree-default-large .ballytree-icon:empty {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+
+.ballytree-default-large.ballytree-rtl .ballytree-node {
+    margin-right: 32px;
+}
+
+.ballytree-default-large .ballytree-wholerow {
+    height: 32px;
+}
+
+.ballytree-default-large .ballytree-node,
+.ballytree-default-large .ballytree-icon {
+    background-image: url("Images/s32px.png");
+}
+
+.ballytree-default-large .ballytree-node {
+    background-position: -288px 0px;
+    background-repeat: repeat-y;
+}
+
+.ballytree-default-large .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default-large .ballytree-open > .ballytree-ocl {
+    background-position: -128px 0px;
+}
+
+.ballytree-default-large .ballytree-closed > .ballytree-ocl {
+    background-position: -96px 0px;
+}
+
+.ballytree-default-large .ballytree-leaf > .ballytree-ocl {
+    background-position: -64px 0px;
+}
+
+.ballytree-default-large .ballytree-anchor > .ballytree-themeicon {
+    background-position: -256px 0px;
+}
+
+.ballytree-default-large > .ballytree-no-dots .ballytree-node,
+.ballytree-default-large > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default-large > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -32px 0px;
+}
+
+.ballytree-default-large > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: 0px 0px;
+}
+
+.ballytree-default-large .ballytree-disabled {
+    background: transparent;
+}
+
+    .ballytree-default-large .ballytree-disabled.ballytree-hovered {
+        background: transparent;
+    }
+
+    .ballytree-default-large .ballytree-disabled.ballytree-clicked {
+        background: #efefef;
+    }
+
+.ballytree-default-large .ballytree-checkbox {
+    background-position: -160px 0px;
+}
+
+    .ballytree-default-large .ballytree-checkbox:hover {
+        background-position: -160px -32px;
+    }
+
+.ballytree-default-large .ballytree-clicked > .ballytree-checkbox {
+    background-position: -224px 0px;
+}
+
+    .ballytree-default-large .ballytree-clicked > .ballytree-checkbox:hover {
+        background-position: -224px -32px;
+    }
+
+.ballytree-default-large .ballytree-anchor > .ballytree-undetermined {
+    background-position: -192px 0px;
+}
+
+    .ballytree-default-large .ballytree-anchor > .ballytree-undetermined:hover {
+        background-position: -192px -32px;
+    }
+
+.ballytree-default-large > .ballytree-striped {
+    background-size: auto 64px;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAACAQMAAAB49I5GAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjAAMOBgAAGAAJMwQHdQAAAABJRU5ErkJggg==");
+    background-position: 100% 1px;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-last {
+    background: transparent;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-open > .ballytree-ocl {
+    background-position: -128px -32px;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-closed > .ballytree-ocl {
+    background-position: -96px -32px;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-leaf > .ballytree-ocl {
+    background-position: -64px -32px;
+}
+
+.ballytree-default-large.ballytree-rtl > .ballytree-no-dots .ballytree-node,
+.ballytree-default-large.ballytree-rtl > .ballytree-no-dots .ballytree-leaf > .ballytree-ocl {
+    background: transparent;
+}
+
+.ballytree-default-large.ballytree-rtl > .ballytree-no-dots .ballytree-open > .ballytree-ocl {
+    background-position: -32px -32px;
+}
+
+.ballytree-default-large.ballytree-rtl > .ballytree-no-dots .ballytree-closed > .ballytree-ocl {
+    background-position: 0px -32px;
+}
+
+.ballytree-default-large .ballytree-themeicon-custom {
+    background-color: transparent;
+    background-image: none;
+}
+
+.ballytree-default-large > .ballytree-container-ul .ballytree-loading > .ballytree-ocl {
+    background: url("Images/throbber.gif") center center no-repeat;
+}
+
+.ballytree-default-large.ballytree-rtl .ballytree-node {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAACAQMAAAAD0EyKAAAABlBMVEUAAAAdHRvEkCwcAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjgIIGBgABCgCBvVLXcAAAAABJRU5ErkJggg==");
+    background-position: 100% 1px;
+}
+
+@media (max-width: 768px) {
+    .ballytree-default-responsive {
+        /*
+            .ballytree-open > .ballytree-ocl,
+            .ballytree-closed > .ballytree-ocl { border-radius:20px; background-color:white; }
+            */
+    }
+
+        .ballytree-default-responsive .ballytree-icon {
+            background-image: url("40px.png");
+        }
+
+        .ballytree-default-responsive .ballytree-node,
+        .ballytree-default-responsive .ballytree-leaf > .ballytree-ocl {
+            background: transparent;
+        }
+
+        .ballytree-default-responsive .ballytree-node {
+            min-height: 40px;
+            line-height: 40px;
+            margin-left: 40px;
+            min-width: 40px;
+            white-space: nowrap;
+        }
+
+        .ballytree-default-responsive .ballytree-anchor {
+            line-height: 40px;
+            height: 40px;
+        }
+
+        .ballytree-default-responsive .ballytree-icon,
+        .ballytree-default-responsive .ballytree-icon:empty {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .ballytree-default-responsive > .ballytree-container-ul > .ballytree-node {
+            margin-left: 0;
+        }
+
+        .ballytree-default-responsive.ballytree-rtl .ballytree-node {
+            margin-left: 0;
+            margin-right: 40px;
+        }
+
+        .ballytree-default-responsive.ballytree-rtl .ballytree-container-ul > .ballytree-node {
+            margin-right: 0;
+        }
+
+        .ballytree-default-responsive .ballytree-ocl,
+        .ballytree-default-responsive .ballytree-themeicon,
+        .ballytree-default-responsive .ballytree-checkbox {
+            background-size: 120px 200px;
+        }
+
+        .ballytree-default-responsive .ballytree-leaf > .ballytree-ocl {
+            background: transparent;
+        }
+
+        .ballytree-default-responsive .ballytree-open > .ballytree-ocl {
+            background-position: 0 0px !important;
+        }
+
+        .ballytree-default-responsive .ballytree-closed > .ballytree-ocl {
+            background-position: 0 -40px !important;
+        }
+
+        .ballytree-default-responsive.ballytree-rtl .ballytree-closed > .ballytree-ocl {
+            background-position: -40px 0px !important;
+        }
+
+        .ballytree-default-responsive .ballytree-anchor > .ballytree-themeicon {
+            background-position: -40px -40px;
+        }
+
+        .ballytree-default-responsive .ballytree-checkbox,
+        .ballytree-default-responsive .ballytree-checkbox:hover {
+            background-position: -40px -80px;
+        }
+
+        .ballytree-default-responsive .ballytree-clicked > .ballytree-checkbox,
+        .ballytree-default-responsive .ballytree-clicked > .ballytree-checkbox:hover {
+            background-position: 0 -80px;
+        }
+
+        .ballytree-default-responsive .ballytree-anchor > .ballytree-undetermined,
+        .ballytree-default-responsive .ballytree-anchor > .ballytree-undetermined:hover {
+            background-position: 0 -120px;
+        }
+
+        .ballytree-default-responsive .ballytree-anchor {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 1px 1px white;
+        }
+
+        .ballytree-default-responsive > .ballytree-striped {
+            background: transparent;
+        }
+
+        .ballytree-default-responsive .ballytree-wholerow {
+            border-top: 1px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(64, 64, 64, 0.2);
+            background: #ebebeb;
+            height: 40px;
+        }
+
+        .ballytree-default-responsive .ballytree-wholerow-hovered {
+            background: #e7f4f9;
+        }
+
+        .ballytree-default-responsive .ballytree-wholerow-clicked {
+            background: #beebff;
+        }
+
+        .ballytree-default-responsive .ballytree-children .ballytree-last > .ballytree-wholerow {
+            box-shadow: inset 0 -6px 3px -5px #666666;
+        }
+
+        .ballytree-default-responsive .ballytree-children .ballytree-open > .ballytree-wholerow {
+            box-shadow: inset 0 6px 3px -5px #666666;
+            border-top: 0;
+        }
+
+        .ballytree-default-responsive .ballytree-children .ballytree-open + .ballytree-open {
+            box-shadow: none;
+        }
+
+        .ballytree-default-responsive .ballytree-node,
+        .ballytree-default-responsive .ballytree-icon,
+        .ballytree-default-responsive .ballytree-node > .ballytree-ocl,
+        .ballytree-default-responsive .ballytree-themeicon,
+        .ballytree-default-responsive .ballytree-checkbox {
+            background-image: url("40px.png");
+            background-size: 120px 200px;
+        }
+
+        .ballytree-default-responsive .ballytree-node {
+            background-position: -80px 0;
+            background-repeat: repeat-y;
+        }
+
+        .ballytree-default-responsive .ballytree-last {
+            background: transparent;
+        }
+
+        .ballytree-default-responsive .ballytree-leaf > .ballytree-ocl {
+            background-position: -40px -120px;
+        }
+
+        .ballytree-default-responsive .ballytree-last > .ballytree-ocl {
+            background-position: -40px -160px;
+        }
+
+        .ballytree-default-responsive .ballytree-themeicon-custom {
+            background-color: transparent;
+            background-image: none;
+        }
+}
+
+.ballytree-default > .ballytree-container-ul > .ballytree-node {
+    margin-left: 0;
+    margin-right: 0;
+}
+.ballytree-default > .ballytree-container-ul > .ballytree-node:nth-child(even) {
+    background-color:#fff;
+}
+.ballytree-default > .ballytree-container-ul > .ballytree-node:nth-child(odd) {
+    background-color:rgba(213, 213, 213, 0.19);
+}
+.ballytree-default > .ballytree-container-ul .ballytree-children {
+}
+.ballytree-container-ul > .ballytree-node > .ballytree-anchor {
+    font-size: 13px;
+    color: #000;
+    font-weight: normal;
+    line-height: 40px;
+    font-family: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 15px;
+    line-height: 40px;
+    width: calc(100% - 50px);
+}
+
+.ballytree {
+    font-size: 0.9em !important;
+    border-top: 1px solid #d5d5d5;
+    padding-top: 10px;
+    height: calc(100% - 85px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+    width: 100%;
+}
+
+.ballytree-default .ballytree-checkbox {
+    position: relative;
+    background-image: none;
+    width: 19px !important;
+    height: 19px !important;
+    background-color: #fff;
+    border: 1px solid #999999;
+    margin-right: 15px;
+    margin-top: calc((20px -19px)/2);
+}
+
+    .ballytree-default .ballytree-checkbox:before {
+        /*content: "";
+    top: 0;
+    left: 0px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    position: absolute;*/
+    }
+
+    .ballytree-default .ballytree-checkbox:hover {
+        background-color: none;
+    }
+
+.ballytree-default .ballytree-clicked > .ballytree-checkbox {
+    background-color: #26a69a;
+    position: relative;
+    border-color: #26a69a;
+    margin-right: 15px;
+}
+
+.ballytree-checkbox.disabled {
+    background: #c2c2c2;
+    border-color: #c2c2c2;
+    pointer-events: none;
+}
+
+.ballytree-default .ballytree-clicked > .ballytree-checkbox:before {
+    content: "";
+    top: 2px;
+    left: 1px;
+    width: 4px;
+    height: 9px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    position: absolute;
+}
+
+
+.ballytree-default .ballytree-clicked > .ballytree-checkbox:hover {
+    /*background-color: #26a69a;*/
+}
+
+.ballytree-default .ballytree-anchor > .ballytree-undetermined {
+    position: relative;
+    background-color: #fff;
+}
+
+.ballytree-icon.ballytree-checkbox.ballytree-undetermined:after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: #26a69a !important;
+    z-index: 999;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+}
+
+.ballytree-default .ballytree-anchor > .ballytree-undetermined:hover {
+    /*background-color:none;*/
+}
+
+.ballytree-default .ballytree-open > .ballytree-ocl, .ballytree-default .ballytree-closed > .ballytree-ocl:hover {
+    width: 25px;
+    height: 25px;
+    float: right;
+    background-image: url(Images/arrow.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #40BABD;
+    background-size: 15px;
+    background-position: center !important;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: 0.2s ease-out;
+    margin-top: calc((40px - 25px)/2);
+}
+
+.ballytree-default .ballytree-closed > .ballytree-ocl {
+    width: 25px;
+    height: 25px;
+    float: right;
+    background: url(Images/Darrow.png) no-repeat scroll 0 0 transparent;
+    background-size: 15px;
+    background-position: center !important;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 0.2s ease-out;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    transition: 0.2s ease-out;
+    margin-top: calc((40px - 25px)/2);
+}
+
+.treeview .listControlIcons {
+    height: 30px;
+    width: 30px;
+    background: #00acac;
+    float: left;
+    margin-left: 10px;
+    margin: 5px;
+   cursor: pointer;
+}
+
+.treeview .ExpandAll {
+    background-image: url(Images/Expand.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.treeview .CollapseAll {
+   -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background-image: url(Images/Expand.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*New styles*/
+

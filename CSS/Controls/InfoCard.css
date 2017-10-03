@@ -1,0 +1,120 @@
+.btnElement {
+    float: left;
+    margin: 0px 10px;
+}
+
+.CardPanel {
+    width: 100%;
+    height: 142px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.smallTile {
+    cursor: pointer;
+    float: left;
+    margin: 0px 5px;
+    display: flex;
+}
+
+.smallTile .smallTileBody {
+    height: 100%;
+    min-width: 200px;
+    height: 120px;
+    padding: 0px 10px;
+    text-align: left;
+    margin-left: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: #F6F7F8;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.smallTile .smallTileBody:first-child {
+    margin-left: 0px;
+}
+
+.smallTile .smallTileBody.right {
+    border-top: 1px solid #e6e4e4;
+}
+
+.smallTile .smallTileBody .heading {
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+    display: block;
+}
+
+.smallTile .smallTileBody .statusContent {
+    padding: 0px 5px;
+    width: 100%;
+}
+
+.smallTile .smallTileBody .statusAvailable {
+    width: 100%;
+    float: left;
+}
+
+
+.smallTile .smallTileBody .statusContent:hover {
+    background-color: rgba(210, 210, 210, 0.52);
+    border-radius: 2px;
+}
+
+.smallTile .smallTileBody .statusAvailableSec {
+    width: 50%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.smallTile .smallTileBody .statusAvailableSec:hover {
+    background-color: rgba(210, 210, 210, 0.52);
+    border-radius: 2px;
+}
+
+.smallTile .smallTileBody .statusAvailableSec .statusCount {
+    font-size: 17px;
+    line-height: 19px;
+}
+
+.smallTile .smallTileBody .statusAvailableSec .statusText {
+    font-size: 13px;
+}
+
+.smallTile .smallTileBody .statusCount {
+    display: block;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.smallTile .smallTileBody .statusText {
+    display: block;
+    font-size: 13px;
+    color: #000;
+}
+
+.smallTile:first-child:hover {
+    border-bottom: 0px;
+}
+
+.smallTile:hover {
+    border-bottom: 2px solid #00acac;
+}
+
+.smallTile:last-child {
+    margin-right: 0px;
+}
+
+.error-text {
+    color: red;
+}
+
+.sucess-text {
+    color: green;
+}
+
+.normal-text {
+    color: #00acac;
+}

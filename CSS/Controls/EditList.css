@@ -1,0 +1,176 @@
+.BallyEditList {
+    position: relative;
+    height: calc(100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+    .BallyEditList textarea:focus, .BallyEditList input:focus {
+        outline: none;
+    }
+
+    .BallyEditList ul, .BallyEditList ol {
+        list-style-type: none;
+        padding: 0px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        height: calc(100% - 62px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .BallyEditList ul.ui-sortable, .BallyEditList ol.ui-sortable {
+            position: relative;
+            list-style-position: inside;
+        }
+
+            .BallyEditList ul.ui-sortable li, .BallyEditList ol.ui-sortable li {
+                cursor: move;
+                background-color: #fff;
+                border-top: 1px solid #00acac;
+                border-left: 1px solid #00acac;
+                border-right: 1px solid #00acac;
+                list-style-type: decimal;
+                color: #000;
+                padding-left: 5px;
+                font-size: 13px;
+            }
+
+                .BallyEditList ul.ui-sortable li:last-child, .BallyEditList ol.ui-sortable li:last-child {
+                    border-bottom: 1px solid #00acac;
+                }
+
+                .BallyEditList ul.ui-sortable li:hover span, .BallyEditList ol.ui-sortable li:hover span {
+                    display: inline !important;
+                }
+
+                .BallyEditList ul.ui-sortable li.ui-state-highlight, .BallyEditList ol.ui-sortable li.ui-state-highlight {
+                    width: 288px;
+                    height: 42px;
+                    background-color: #e8e8e8;
+                    list-style: none;
+                }
+
+                .BallyEditList ul.ui-sortable li span, .BallyEditList ol.ui-sortable li span {
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    color: #c2c2c2;
+                    cursor: move;
+                    padding: 12px 5px;
+                    display: none;
+                }
+
+                .BallyEditList ul.ui-sortable li .removeList, .BallyEditList ol.ui-sortable li .removeList {
+                    display: none;
+                }
+
+                .BallyEditList ul.ui-sortable li input[type=text], .BallyEditList ol.ui-sortable li input[type=text] {
+                    color: #000;
+                    width: 90% !important;
+                    cursor: move;
+                }
+
+                    .BallyEditList ul.ui-sortable li input[type=text]:focus, .BallyEditList ol.ui-sortable li input[type=text]:focus {
+                        background: #fff;
+                        color: #000 !important;
+                    }
+
+    .BallyEditList li {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+        .BallyEditList li:last-child {
+            border-bottom: 1px solid #00acac;
+        }
+
+        .BallyEditList li .icon-cross {
+            font-size: 10px;
+            line-height: 18px;
+        }
+
+    .BallyEditList input[type=text] {
+        float: right;
+        height: 38px;
+        line-height: 40px;
+        border: 0px !important;
+        background: #fff;
+        padding: 0px 30px 0px 15px;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+    }
+
+        .BallyEditList input[type=text]:hover + .listClose, .BallyEditList input[type=text]:hover + .removeList {
+            border: 1px solid #00acac;
+            background: #00acac;
+        }
+
+        .BallyEditList input[type=text]:focus {
+            background: #00acac;
+            color: #FFF !important;
+            box-shadow: none !important;
+            border: 0 !important;
+        }
+
+            .BallyEditList input[type=text]:focus + .removeList {
+                background: #00acac;
+                border: 1px solid #fff;
+            }
+
+    .BallyEditList .addField {
+        position: relative;
+        height: 40px;
+    }
+
+    .BallyEditList #AddList {
+        border: 1px solid #00acac !important;
+        width: 100% !important;
+        height: 40px;
+        margin: 0px auto;
+        display: block;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+        .BallyEditList #AddList:focus {
+            background: #fff;
+            color: #000 !important;
+            box-shadow: none !important;
+        }
+
+        .BallyEditList #AddList + .listAdd {
+            background: #00acac;
+            border: 1px solid #00acac;
+            font-size: 20px;
+        }
+
+            .BallyEditList #AddList + .listAdd .icon-plus {
+                text-align: center;
+                line-height: 18px;
+            }
+
+    .BallyEditList .listAdd, .BallyEditList .removeList {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 11px;
+        right: 5px;
+        background: #c2c2c2;
+        text-align: center;
+        border-radius: 50%;
+        color: #FFF;
+        border: 1px solid #c2c2c2;
+        line-height: 12px;
+        padding: 0px;
+    }
+
+        .BallyEditList .listAdd:hover, .BallyEditList .removeList:hover {
+            background: #00acac;
+            border: 1px solid #00acac;
+        }

@@ -1,0 +1,317 @@
+<html class="">
+<head>
+    <title>Chart Control</title>
+    <script src="../JS/LIB/jquery-2.1.1.min.js"></script>
+    <script src="../JS/ANGULAR/angular.js"></script>
+    <script src="../JS/ANGULAR/bindonce.js"></script>
+    <script src="../JS/ANGULAR/checklist-model.js"></script>
+
+    <link href="../CSS/1.normalize.css" rel="stylesheet" />
+    <link href="../CSS/2.foundation.css" rel="stylesheet" />
+    <link href="../CSS/3.materialize.min.css" rel="stylesheet" />
+    <link href="../CSS/Controls/jquery.jqplot.css" rel="stylesheet" />
+
+    <link href="../CSS/Controls/BubbleChart.css" rel="stylesheet" />
+
+    <script src="../JS/BubbleChart.js"></script>
+
+</head>
+
+<body style="padding: 15px;">
+    <style>
+        .btnElement {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        .ChartGraph #ChartGraph, .ChartGraph {
+            width: 100%;
+            height: 700px;
+        }
+
+        .fullHeight {
+            height: 100%;
+        }
+
+        .bubble_holder {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+
+    <h4>Bubble Control</h4>
+
+    <div data-ng-app="BubbleControlApp" data-ng-controller="BubbleControlController" class="bubble_holder" id="bubbleChart">
+        <div class="bubbleChart">
+
+            <div class="medium-8 columns fullHeight">
+                <div data-ng-repeat="myAssets in sortedAsset" class="bubble {{myAssets.color}}" data-ng-style="getStyle({{$index}})">
+                    <span class="bubbleInfo">
+                        <span class="triangle-top">
+                            <span class="inner-triangle"></span>
+                        </span>
+                        <span class="name" ng-bind="myAssets.bubbleData.name"></span>
+                        <span class="number" ng-bind="myAssets.bubbleData.number"></span>
+                        <span class="status" ng-bind="myAssets.bubbleData.status"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="medium-4 columns fullHeight colorIndicator">
+                <ul>
+                    <li ng-repeat="myAssets in sortedAsset">
+                        <span class="color {{myAssets.color}}"></span><span class="represent" ng-title="'['+myAssets.bubbleData.number +'] - '+ myAssets.bubbleData.name" ng-bind="'['+myAssets.bubbleData.number+'] - '+ myAssets.bubbleData.name"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="button-holder btnPanel">
+        <div class="btnElement">
+            <button class="btn SgBtnGray waves-effect waves-light" id="AddNew">Add New Data</button>
+        </div>
+        <div class="btnElement" id="btnSave">
+            <button class="btn waves-effect waves-light" id="Reload">Reload New Data</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var assetData = [
+               {
+                   "bubbleName": "Slot",
+                   "color": "blue",
+                   "bubbleData": {
+                       "name": "Slot",
+                       "number": 14497,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Progressive Pool",
+                   "color": "red",
+                   "bubbleData": {
+                       "name": "Progressive Pool",
+                       "number": 788,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Controller",
+                   "color": "deep-purple",
+                   "bubbleData": {
+                       "name": "Controller",
+                       "number": 484,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "POS",
+                   "color": "amber",
+                   "bubbleData": {
+                       "name": "POS",
+                       "number": 311,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Cashier Work Station",
+                   "color": "grey",
+                   "bubbleData": {
+                       "name": "Cashier Work Station",
+                       "number": 115,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Cash Desk",
+                   "color": "yellow",
+                   "bubbleData": {
+                       "name": "Cash Desk",
+                       "number": 79,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Kiosk",
+                   "color": "lime",
+                   "bubbleData": {
+                       "name": "Kiosk",
+                       "number": 74,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Kiosk",
+                   "color": "indigo",
+                   "bubbleData": {
+                       "name": "ACM-Kiosk",
+                       "number": 24,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Caion",
+                   "color": "deep-orange",
+                   "bubbleData": {
+                       "name": "ACM-Caion",
+                       "number": 5,
+                       "status": ""
+                   }
+               }
+            ];
+            var assetData1 = [
+               {
+                   "bubbleName": "Slot",
+                   "color": "blue",
+                   "bubbleData": {
+                       "name": "Slot",
+                       "number": 144,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Progressive Pool",
+                   "color": "red",
+                   "bubbleData": {
+                       "name": "Progressive Pool",
+                       "number": 78,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Controller",
+                   "color": "deep-purple",
+                   "bubbleData": {
+                       "name": "Controller",
+                       "number": 48,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "POS",
+                   "color": "amber",
+                   "bubbleData": {
+                       "name": "POS",
+                       "number": 31,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Cashier Work Station",
+                   "color": "grey",
+                   "bubbleData": {
+                       "name": "Cashier Work Station",
+                       "number": 11,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Cash Desk",
+                   "color": "yellow",
+                   "bubbleData": {
+                       "name": "Cash Desk",
+                       "number": 7,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Kiosk",
+                   "color": "lime",
+                   "bubbleData": {
+                       "name": "Kiosk",
+                       "number": 4,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Kiosk",
+                   "color": "indigo",
+                   "bubbleData": {
+                       "name": "ACM-Kiosk",
+                       "number": 2,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Caion",
+                   "color": "deep-orange",
+                   "bubbleData": {
+                       "name": "ACM-Caion",
+                       "number": 5,
+                       "status": ""
+                   }
+               }
+            ];
+            var newassetData = [
+
+               {
+                   "bubbleName": "Controller",
+                   "color": "deep-purple",
+                   "bubbleData": {
+                       "name": "Controller",
+                       "number": 484,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "POS",
+                   "color": "amber",
+                   "bubbleData": {
+                       "name": "POS",
+                       "number": 311,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "Cashier Work Station",
+                   "color": "grey",
+                   "bubbleData": {
+                       "name": "Cashier Work Station",
+                       "number": 115,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Kiosk",
+                   "color": "indigo",
+                   "bubbleData": {
+                       "name": "ACM-Kiosk",
+                       "number": 24,
+                       "status": ""
+                   }
+               },
+               {
+                   "bubbleName": "ACM-Caion",
+                   "color": "deep-orange",
+                   "bubbleData": {
+                       "name": "ACM-Caion",
+                       "number": 5,
+                       "status": ""
+                   }
+               }
+            ];
+
+            function assetTypeData(data) {
+                var appElement = document.querySelector('.bubble_holder');
+                var appScope = angular.element(appElement).scope();
+                appScope.$apply(function () {
+                    appScope.myAsset = data;
+                });
+            };
+            assetTypeData(assetData);
+
+
+            $('#AddNew').click(function () { assetTypeData(newassetData); });
+
+            $('#Reload').click(function () { assetTypeData(assetData1); });
+
+            $(window).resize(function () {
+                //$('#ChartGraph').BubbleChartControl('refresh');
+            });
+        });
+    </script>
+</body>
+</html>
